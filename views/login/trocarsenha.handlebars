@@ -1,0 +1,71 @@
+<div class="d-flex justify-content-center m-3">
+    <div class="col-4 card">
+        <div class="card-body">
+            <h1 class="card-title text-center fs-1">Troca de Senha</h1>
+            <form id="formTrocarSenha" action="/trocarSenha" onsubmit="return validarSenhas();">
+                <div class="m-3">
+                    <label class="form-label" for="cpf">Confirme seu CPF:</label>
+                    <input type="text"
+                           autocomplete="current-cpf"
+                           name="cpf"
+                           id="cpf"
+                           oninput="mascaraCPF(this), validarCPF(this)"
+                           class="form-control"
+                           maxlength="14"
+                           placeholder="000.000.000-00"
+                           aria-required="true"
+                           aria-describedby="cpfHelp"
+                           required autofocus>
+                    <div id="cpfHelp" class="form-text">Digite seu CPF no formato 000.000.000-00.</div>
+                </div>
+                <div class="m-3">
+                    <label class="form-label" for="senhaAtual">Senha Atual:</label>
+                    <input type="password"
+                           autocomplete="current-password"
+                           name="senhaAtual"
+                           id="senhaAtual"
+                           class="form-control"
+                           placeholder="Digite a senha atual."
+                           aria-required="true"
+                           aria-describedby="senhaAtualHelp"
+                           required>
+                    <div id="senhaAtualHelp" class="form-text">Sua senha atual.</div>
+                </div>
+                <div class="m-3">
+                    <label class="form-label" for="novaSenha">Nova Senha:</label>
+                    <input type="password"
+                           autocomplete="new-password"
+                           name="novaSenha"
+                           id="novaSenha"
+                           class="form-control"
+                           placeholder="Digite sua nova senha."
+                           minlength="8"
+                           aria-required="true"
+                           aria-describedby="novaSenhaHelp"
+                           required>
+                    <div id="novaSenhaHelp" class="form-text">A senha deve ter pelo menos 8 caracteres, 1 caractere especial, 1 letra maiúscula e 1 número.</div>
+                </div>
+                <div class="m-3">
+                    <label class="form-label" for="novaSenha2">Confirme a Nova Senha:</label>
+                    <input type="password"
+                           autocomplete="new-password"
+                           name="novaSenha2"
+                           id="novaSenha2"
+                           class="form-control"
+                           placeholder="Repita sua nova senha."
+                           minlength="8"
+                           aria-required="true"
+                           aria-describedby="novaSenha2Help"
+                           required>
+                    <div id="novaSenha2Help" class="form-text">Certifique-se de que as senhas coincidam.</div>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-lg btn-primary m-3" aria-label="Confirmar troca de senha">Trocar senha</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="module" src="/js/login/trocarSenha.js"></script>
+<script type="module" src="/js/funcoes.js"></script>
+<script src="/js/login/util.js"></script>

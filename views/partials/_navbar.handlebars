@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg d-flex justify-content-between mb-4 nav">
+    <button class="btn color-dark ms-4" type="button" id="btnSideBar" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <ul class="navbar-nav flex-grow-1 m-3" id="navPadrao">
+        <li class="nav-item me-2">
+            <h1>Projeto TCC - Barbearia</h1>
+        </li>
+    </ul>
+    <ul class="navbar-nav m-3">
+        <li class="nav-item me-2">
+            <a href="/home" class="btn-nav">Home</a>
+        </li>
+        <li class="nav-item me-2">
+            <a href="/sobre" class="btn-nav">Sobre</a>
+        </li>
+        <li class="nav-item me-2">
+            <a href="/servicos" class="btn-nav">Serviços</a>
+        </li>
+        <li class="nav-item me-2">
+            <a href="/contato" class="btn-nav">Contato</a>
+        </li>
+        <li class="nav-item me-2">
+           <a class="btn-nav btn-login" href="/login">Entrar</a>
+        </li>
+    </ul>
+</nav>
+
+<nav class="offcanvas offcanvas-start d-flex flex-column flex-shrink-0 p-3 bg-dark nav" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+            <a class="nav-link text-light btn-nav" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        </li>
+        {{#if user}}
+        <li class="nav-item">
+            <a class="nav-link text-light btn-nav" href="/solicitar"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Solicitar</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light btn-nav" href="/minhasSolicitacoes"><i class="fa fa-list" aria-hidden="true"></i> Minhas solicitações</a>
+        </li>
+        {{#if user.tipoUsuario}}
+        <li class="nav-item">
+            <div class="btn-group">
+                <button class="nav-link text-light dropdown-toggle btn btn-nav" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Administração
+                </button>
+                <ul class="dropdown-menu px-3">
+                    <li><a class="dropdown-item" href="/admin">Área do administrador</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <p class="ms-1">Gerenciamento:</p>
+                        <a class="dropdown-item ms-2" href="/admin/produto">Gerenciamento do almoxarifado</a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <p class="ms-1">Relatório/Histórico:</p>
+                        <a class="dropdown-item ms-2" href="/admin/relatorio">Histórico de solicitações</a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <p class="ms-1">Solicitações:</p>
+                        <a class="dropdown-item ms-2" href="/admin/solicitacao">Novas Solicitações</a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <p class="ms-1">Cadastros:</p>
+                        <a class="dropdown-item ms-2" href="/admin/usuarios">Cadastro e gestão de usuário</a>
+                        <a class="dropdown-item ms-2" href="/admin/setor">Cadastro e gestão de setores</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        {{/if}}
+        {{/if}}
+    </ul>
+    <hr>
+    <ul class="navbar-nav m-3">
+        <li class="nav-item me-2">
+            {{#if user}}
+            <a class="btn text-danger btn-logout" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a>
+            {{else}}
+            <a class="btn text-light btn-login" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Efetuar Login</a>
+            {{/if}}
+        </li>
+    </ul>
+</nav>

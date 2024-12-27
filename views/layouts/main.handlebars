@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de gerenciamento e solicitações para o almoxarifado.">
+    <link rel="stylesheet" href="/css/fontawasome/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/scissors.svg" type="image/x-icon">
+    <title>Projeto TCC - Barbearia</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header>
+        {{>_navbar}}
+    </header>
+
+    <main class="flex-fill">
+        {{>_erros}}
+        {{>_msg}}
+        {{{body}}}
+    </main>
+
+    <footer class="d-flex justify-content-between footer h-100">
+        <section class="p-2 flex-fill">
+            <h2 class="fw-bold">Projeto TCC - Barbearia</h2>
+            <p class="small mb-0">© 2024 Projeto TCC - Barbearia. Transformando sua experiência de cuidado pessoal.</p>
+            <p class="small mb-0">Agende seu horário online, conheça nossos serviços e deixe que a gente cuide do </p>
+            <p class="small mb-0">seu estilo com excelência. Sua satisfação é a nossa prioridade!.</p>
+        </section>
+        <section class="p-2 flex-fill">
+            <ul class="link-rodape">
+                <li>
+                    <a href="/home" class="mb-3">Home</a>
+                </li>
+                <li>
+                    <a href="/sobre" class="">Sobre</a>
+                </li>
+                <li>
+                    <a href="/servicos" class="">Serviços</a>
+                </li>
+                <li>
+                    <a href="/contato" class="">Contato</a>
+                </li>
+            </ul>
+        </section>
+        <section class="p-2 flex-fill">
+            <p>Desenvolvido por: <cite class="small">Yasser Ibrahim Abdallah Vaz Condoluci</cite></p>
+            <p>Siga o Dev:</p>
+            <ul class="d-flex lista-rodape">
+                <li class="me-4">
+                    <a href="https://www.linkedin.com/in/yasser-ibrahim-abdallah" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin icon-branco"></i>
+                    </a>
+                </li>
+                <li class="me-4">
+                    <a href="https://github.com/YasAbdallah" aria-label="GitHub">
+                        <i class="fa-brands fa-github icon-branco"></i>
+                    </a>
+                </li>
+                <li class="me-4">
+                    <a href="https://instagram.com/yasbdallah?igshid=MXY2ZDU2MHE2MHA0dQ==" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram icon-branco"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" async></script>
+    <script src="/js/data.js" async></script>
+    <script src="/js/configs.js" async></script>
+    <script src="/js/validacao.js" async></script>
+</body>
+
+</html>

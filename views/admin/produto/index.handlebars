@@ -1,0 +1,52 @@
+<section class="container border shadow p-3">
+    <a class="btn btn-link" href="/admin" aria-label="Voltar ao painel de administração">Voltar</a>
+    <div class="d-flex justify-content-between m-3">
+        <h1 class="align-self-start">Administração Almoxarifado</h1>
+        <button class="btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#modalIncluirProduto" aria-label="Inserir novo produto">
+            Inserir Novo Produto
+        </button>
+        {{>_modalIncluirProduto}}
+    </div>
+    <hr>
+    <div class="m-3">
+        <a href="/admin/produto" class="btn btn-link">Limpar Filtros</a>
+        <div class="d-flex justify-content-end align-items-center mt-4">
+            <div class="d-flex flex-row ">
+                <form action="/admin/produto" method="get" class="p-2">
+                    <div class="form-floating">
+                        <input type="number" name="itemPag" id="itemPag" class="form-control">
+                        <label for="itemPag">Itens por página:</label>
+                    </div>
+                </form>
+                <form action="/admin/produto/search" method="get" class="p-2">
+                    <div class="input-group form-floating">
+                        <input type="text" name="query" id="query" class="form-control">
+                        <label for="query">Pesquisar:</label>
+                        <button type="submit" class="btn btn-secondary">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <table class="table table-hover mt-4">
+            <thead>
+                <tr class="fs-3">
+                    <th></th>
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Descrição</th>
+                    <th>Observações</th>
+                    <th>Quantidade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="listaProduto"></tbody>
+        </table>
+        {{> _paginacao}}
+    </div>
+</section>
+
+
+<script type="module" src="/js/admin/produto/formProduto.js"></script>
+<script src="/js/JsBarcode.all.min.js"></script>

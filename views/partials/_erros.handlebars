@@ -1,0 +1,23 @@
+{{#each erros}}
+<div class="toast show position-absolute top-0 start-50 translate-middle-x m-4" role="alert" aria-live="assertive">
+  <div class="toast-header text-danger">
+    <strong class="me-auto">Ocorreu um erro.</strong>
+    <button type="button" class="btn-close ms-4" data-bs-dismiss="toast" aria-label="Fechar"></button>
+  </div>
+  <div class="toast-body fs-5">
+    {{texto}}
+  </div>
+</div>
+{{else}}
+{{/each}}
+{{#if error}}
+<div class="toast show position-absolute top-0 start-50 translate-middle-x m-4" role="alert" aria-live="assertive">
+  <div class="toast-header text-danger">
+    <strong class="me-auto">Ocorreu um erro.</strong>
+    <button type="button" class="btn-close ms-4" data-bs-dismiss="toast" aria-label="Fechar"></button>
+  </div>
+  <div class="toast-body fs-5">
+    {{error}}
+  </div>
+</div>
+{{/if}}

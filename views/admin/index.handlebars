@@ -1,0 +1,62 @@
+<section class="container border shadow">
+    <h1 class="m-3">Bem-vindo à seção de administração</h1>
+    <section class="d-flex">
+        <div class="list-group col-6 me-1">
+            <!-- Solicitacoes de Produtos -->
+            <a href="/admin/solicitacao" class="list-group-item card rounded">
+                <div class="d-flex justify-content-between">
+                    <h3 class="card-title">Solicitações de Produtos</h3>
+                    <span class="badge bg-primary rounded-pill" data-bs-toggle="tooltip" 
+                          data-bs-title="Você tem {{totalSolicitacao}} novas requisições de produto.">{{totalSolicitacao}}</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Consulte e autorize as solicitações de produtos feitas por seus colegas, ou negue conforme necessário.</p>
+                    <small class="text-muted">Clique para ver as solicitações.</small>
+                </div>
+            </a>
+
+            <!-- Cadastro de Usuarios -->
+            <a href="/admin/usuarios" class="list-group-item card rounded">
+                <div class="d-flex justify-content-between">
+                    <h3 class="card-title">Cadastro de Usuários</h3>
+                    <span class="badge bg-primary rounded-pill" data-bs-toggle="tooltip" 
+                          data-bs-title="Você tem {{totalContaSolicitada}} solicitações de cadastro.">{{totalContaSolicitada}}</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Aprovar ou recusar solicitações de cadastro e gerenciar perfis de usuários.</p>
+                    <small class="text-muted">Verifique as solicitações de cadastro.</small>
+                </div>
+            </a>
+
+            <!-- Cadastro de Setores -->
+            <a href="/admin/setor" class="list-group-item card rounded">
+                <h3 class="card-title">Cadastro de Setores</h3>
+                <div class="card-body">
+                    <p class="card-text">Adicione, edite ou remova setores da organização.</p>
+                    <small class="text-muted">Clique para conferir.</small>
+                </div>
+            </a>
+        </div>
+
+        <div class="list-group col-6 ms-1">
+            <!-- Gerenciar Almoxarifado -->
+            <a href="/admin/produto" class="list-group-item card rounded">
+                <h3 class="card-title">Gerenciar Almoxarifado</h3>
+                <div class="card-body">
+                    <p class="card-text">Aqui você pode adicionar, atualizar ou <i class="btn-link" data-bs-toggle="tooltip" 
+                           data-bs-title="Remover produtos que não estejam mais em estoque.">remover</i> itens do estoque.</p>
+                    <small class="text-muted">Vamos gerenciar?</small>
+                </div>
+            </a>
+
+            <!-- Relatório por Data -->
+            <a href="/admin/relatorio" class="list-group-item card rounded">
+                <h3 class="card-title">Relatório por Data</h3>
+                <div class="card-body">
+                    <p class="card-text">Veja o histórico de solicitações concluídas e gere relatórios por data.</p>
+                    <small class="text-muted">Explore essa função.</small>
+                </div>
+            </a>
+        </div>
+    </section>
+</section>
