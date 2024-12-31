@@ -96,11 +96,11 @@ nav a {
 
 .imagem-topo{
     position: relative;
-    background-image: url("../img/imagem-topo.png");
+    background-image: url("../img/topo.webp");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 50vh;
+    height: 100vh;
 }
 
 .imagem-topo h1{
@@ -112,7 +112,6 @@ nav a {
 }
 
 .imagem-topo h2{
-    filter: brightness(150%);
     font-family: Poppins, serif;
     font-weight: 400;
     margin-bottom: 10px;
@@ -121,7 +120,6 @@ nav a {
 }
 
 .imagem-topo a{
-    filter: brightness(150%);
     color: white; /* Cor do texto */
     padding: 13px 33px;
     font-size: 1.2rem;
@@ -131,9 +129,7 @@ nav a {
 }
 
 #sobre{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     padding: 1em;
     height: 100%;
     margin-top: 5vh;
@@ -147,24 +143,60 @@ nav a {
     color: var(--cor2);
 }
 
-#sobre .conteudo{
-    display: flex; /* Flex container para p e img */
-    flex-direction: row; /* Alinha verticalmente ao centro */
-    justify-content: space-between; /* Espaça o conteúdo horizontalmente */
+.conteudo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     gap: 20px; /* Espaçamento entre o p e img */
 }
 
 #sobre p{
-    flex: 1; /* Ocupa todo o espaço disponível */
+    flex: 1;
     font-weight: 500;
     font-size: x-large;
     color: var(--cor4);
 }
 
 #sobre img{
-    flex-shrink: 0;  /* Não deixa a imagem diminuir */
+    flex: 1;
     height: 85vh;
     border-radius: 5px;
+}
+
+#contato div{
+    color: var(--cor4);
+    flex: 1;
+    gap: 20px;
+}
+#contato form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.conteudo-horario{
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Espaçamento entre o p e img */
+}
+
+.conteudo-horario .lista-horario{
+    font-size: larger;
+}
+
+.btn-contato{
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+    background-color: var(--cor3);
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+.btn-contato:hover{
+    background-color: var(--cor3-1);
 }
 
 #dia{
@@ -173,6 +205,7 @@ nav a {
 }
 
 .container{
+    width: 100%;
     text-align: justify;
     margin: 0 auto;
     padding: auto;
@@ -371,7 +404,7 @@ body::-webkit-scrollbar-thumb{
     }
 
     .container {
-        gap: 15px;
+        gap: 10vh;
     }
 
     .card-lista-solicitacao {
@@ -405,7 +438,7 @@ body::-webkit-scrollbar-thumb{
     }
 
     .container {
-        gap: 20px;
+        gap: 20vh;
     }
 
     .card-lista-solicitacao {
@@ -437,7 +470,7 @@ body::-webkit-scrollbar-thumb{
     }
 
     .container {
-        gap: 30px;
+        gap: 30vh;
     }
 
     .card-lista-solicitacao {
