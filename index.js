@@ -9,14 +9,7 @@ const flash = require("connect-flash")
 const passport = require('passport')
 require("./config/auth")(passport)
 const db = require("./config/db")
-const solicitar = require('./routes/solicitacao/solicitar')
-const minhasSolicitacoes = require('./routes/minhasSolicitacoes/solicitacoes')
-const login = require('./routes/login/login')
-const esquecerSenha = require('./routes/login/esquecerSenha')
-const logout = require('./routes/login/logout')
-const solicitarConta = require('./routes/conta/solicitar')
-const trocarSenha = require('./routes/login/trocarSenha')
-const admin = require('./routes/admin')
+//const mensagem = require('./routes/whatsapp-handle/mensagem')
 const { config } = require("process")
 const app = express()
 
@@ -30,7 +23,7 @@ app.use(bodyparse.json())
 app.use(bodyparse.urlencoded({extended:false}))
 //Sessão
 app.use(session({
-    secret: 'almoxarifado',
+    secret: 'projetoTCC-barbearia',
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -82,14 +75,7 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.use("/admin", admin)
-app.use("/solicitar", solicitar)
-app.use("/minhasSolicitacoes", minhasSolicitacoes)
-app.use("/login", login)
-app.use("/esquecerSenha", esquecerSenha)
-app.use("/logout", logout)
-app.use("/conta", solicitarConta)
-app.use("/trocarSenha", trocarSenha)
+//app.use("/mensagem", mensagem)
 app.get('*', (req, res) => {
     res.render('pagina-nao-encontrada/')
 })
