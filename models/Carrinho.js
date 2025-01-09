@@ -1,25 +1,43 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema 
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const Carrinho = new Schema({
-    itens: [{
-        produto: {
-            //PK
-            type: Schema.Types.ObjectId,
-            ref: "produtos",
-            required: true
-        },
-        quantidade: {
-            type: Number,
-            required: true
-        },
-    }],
-    usuario: {
-        //PK
+    cliente: {
         type: Schema.Types.ObjectId,
-        ref: "usuario",
+        ref: "cliente",
         required: true
+    },
+    itens: [
+        {
+            produto: {
+                type: Schema.Types.ObjectId,
+                ref: "produto",
+                required: true
+            },
+            quantidade: {
+                type: Number,
+                required: true,
+                default: 1
+            },
+            preco: {
+                type: Number,
+                required: true
+            }
+        }
+    ],
+    precoTotal: {
+        type: Number,
+        required: true,
+        default: 0
+    },
+    dataCriacao: {
+        type: Date,
+        default: Date.now
+    },
+    ativo: {
+        type: Boolean,
+        default: true
     }
-})
+});
 
-mongoose.model("carrinho", Carrinho)
+mongoose.model("carrinho", Carrinho);

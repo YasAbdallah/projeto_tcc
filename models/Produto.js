@@ -1,27 +1,36 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema 
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const Produto  = new Schema({
-    codigo: {
-        type: String,
-        required: true
-    },
-    produto: {
+const Produto = new Schema({
+    nome: {
         type: String,
         required: true
     },
     descricao: {
         type: String,
-        required: true
+        required: false
     },
-    observacao: {
-        type: String,
-        required: true
-    },
-    saldo: {
+    preco: {
         type: Number,
         required: true
+    },
+    estoque: {
+        type: Number,
+        required: true,
+        default: 0
+    },
+    categoria: {
+        type: String,
+        required: false
+    },
+    dataCriacao: {
+        type: Date,
+        default: Date.now
+    },
+    ativo: {
+        type: Boolean,
+        default: true
     }
-})
+});
 
-mongoose.model("produtos", Produto)
+mongoose.model("produto", Produto);
