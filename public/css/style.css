@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-:root{
+:root {
     --cor1: #E7E5E2;
     --cor2: #021130;
     --cor3: #7A5604;
@@ -9,100 +9,62 @@
     --cor5: #DFDDD9;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", "serif";
+    font-family: "Poppins", serif;
     font-weight: 300;
-    font-style: normal;
 }
 
-body{
+body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
-    grid-template-areas: 'cabecalho' 'principal' 'rodape';
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "cabecalho" "principal" "rodape";
     background-color: var(--cor5);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--cor2);
 }
 
-header{
+header {
     grid-area: cabecalho;
     background-color: var(--cor3-1);
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-header h1{
+header h1 {
     font-weight: 700;
-    margin-left: 50px;
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: var(--cor1);
+    margin: 1rem;
 }
 
-nav a {
-    padding: 5px;
-    margin: 5px;
-}
-
-.nav{
-    padding: 10px;
-    height: 10vh;
+.nav {
+    display: flex;
+    justify-content: center;
     background-color: var(--cor2);
+    padding: 1rem;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
-.btn-nav{
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: none;
+
+.nav a {
+    margin: 0 1rem;
     color: var(--cor1);
+    font-weight: 500;
 }
 
-.btn-login{ 
-    border: solid 3px var(--cor1);
-    padding: 10px 30px;
-}
-
-.btn-nav:hover {
-    text-decoration: underline;
+.nav a:hover {
     color: var(--cor3);
-    transition: background-color 0.3s, color 0.3s, text-decoration 0.3s; /* Adiciona transição para as propriedades do botão */ 
-}
-
-.btn-login:hover{
-    border: none;
-    text-decoration: none;
-    padding: 13px 33px;
-    background-color: var(--cor3);
-    color: white;
-}
-
-.btn-info{
-    font-family: "Poppins", serif; /* Define a fonte do botão */
-    font-weight: 300;
-    font-size: 1rem; /* Define um tamanho de fonte menor */
-    padding: 20px 30px; /* Ajusta o preenchimento interno */
-    background-color: var(--cor3); /* Cor de fundo do botão */
-    color: white; /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado do link */
-    border-radius: 5px; /* Bordas arredondadas */
-    border: none; /* Remove a borda padrão */
-    cursor: pointer; /* Mostra o cursor de "clique" */
-    display: inline; /* Garante que o botão seja tratado como bloco */
-}
-
-.btn-info:hover{
-    background-color: var(--cor3-1);
-    color: white;
+    text-decoration: underline;
+    transition: color 0.3s;
 }
 
 .imagem-topo {
@@ -123,480 +85,193 @@ nav a {
     overflow: hidden; /* Evita overflow */
 }
 
-.imagem-topo h1{
-    font-family: Poppins, serif;
+.imagem-topo h1 {
     font-weight: 500;
-    margin-bottom: 10px;
     color: var(--cor1);
-    padding: 100px 0 10px 100px;
+    margin-bottom: 1rem;
 }
 
-.imagem-topo h2{
-    font-family: Poppins, serif;
+.imagem-topo h2 {
     font-weight: 500;
-    margin-bottom: 10px;
     color: var(--cor5);
-    padding: 0 0 10px 100px;
+    margin-bottom: 1rem;
 }
 
-.imagem-topo a{
-    color: white; /* Cor do texto */
-    padding: 13px 33px;
+.imagem-topo a {
+    color: white;
+    padding: 1rem 2rem;
     font-size: 1.2rem;
-    text-align: justify;
-    margin: 0 0 10px 100px;
-}
-
-#servicos{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 1em;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-}
-
-
-#sobre{
-    gap: 10px;
-    padding: 1em;
-    height: 100%;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-}
-
-#sobre h1{
-    font-family: "Poppins", serif;
-    font-weight: 700;
-    font-style: normal;
-    color: var(--cor2);
-}
-
-.img-sobre{
-    flex: 1;
-    height: 85vh;
+    background-color: var(--cor3);
     border-radius: 5px;
 }
 
-
-.card-sobre{
-    background-color: transparent;
-    border: none;
-}
-
-.conteudo{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 20px; /* Espaçamento entre o p e img */
-}
-
-#contato{
+#servicos {
     display: flex;
     flex-direction: column;
-    width: auto; /* Largura igual à largura da janela */
-    height: 100vh; /* Altura igual à altura da janela */
-    margin: 0; /* Remove margens */
-    padding: 0; /* Remove preenchimentos */
-    display: flex; /* Torna-se um contêiner flexível */
-    flex-direction: column; /* Organiza os elementos verticalmente */
-    overflow: hidden; /* Evita overflow */
+    align-items: center;
+    gap: 20px;
+    padding: 2rem;
 }
 
-#contato label{
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: normal;
+#sobre {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2rem;
+}
+
+#sobre h1 {
+    font-weight: 700;
     color: var(--cor2);
 }
 
-#contato div{
-    color: var(--cor4);
-    flex: 1;
+.img-sobre {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     gap: 20px;
 }
 
-#contato form{
+#contato {
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
+    align-items: center;
+    padding: 2rem;
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
-.conteudo-horario{
-    display: flex;
-    gap: 20px; /* Espaçamento entre o p e img */
+#contato label {
+    font-weight: 400;
+    color: var(--cor2);
 }
 
-
-.btn-contato{
-    font-family: "Poppins", serif;
+.btn-contato {
     font-weight: 300;
-    font-style: normal;
-    text-decoration: none;
     color: white;
     background-color: var(--cor2);
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 5px;
 }
 
-.btn-contato:hover{
+.btn-contato:hover {
     background-color: var(--cor3-1);
 }
-#dia{
-    padding-top: 1em;
+
+.footer {
+    grid-area: rodape;
+    background-color: var(--cor2);
+    color: var(--cor1);
     text-align: center;
+    padding: 1rem;
 }
 
-.container{
-    position: relative;
-    width: auto; /* Largura igual à largura da janela */
-    height: 100vh; /* Altura igual à altura da janela */
-    margin: 0; /* Remove margens */
-    padding: 0; /* Remove preenchimentos */
-    justify-self: center;
+.footer a {
+    color: var(--cor1);
 }
 
-.direita{
-    display: flex;
-    float: right;
-    margin-right: 1%;
-}
-
-table{
-    margin: auto;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: left;
-}
-
-.hidden{
-    display: none;
-}
-
-input.hidden{
-    width: 80px;
-}
-
-.pequeno{
-    width: 100px;
-}
-
-#servicos .card {
-    width: 18rem; /* Define a largura dos cards */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destaque */
-}
-
-/*Carousel*/
-.carousel-control-prev,
-.carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px; /* Ajusta a largura dos botões */
-    height: 50px; /* Ajusta a altura dos botões */
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
-    border-radius: 50%; /* Deixa o botão redondo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
-
-.carousel-control-prev {
-    left: -60px; /* Move a seta da esquerda para fora do carrossel */
-}
-
-.carousel-control-next {
-    right: -60px; /* Move a seta da direita para fora do carrossel */
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    background-size: 100%; /* Garante que os ícones ocupem todo o botão */
-}
-
-.carousel-item {
-    transition: opacity 0.8s ease-in-out; /* Controla a duração e o estilo da transição */
-    opacity: 0; /* Invisível por padrão */
-}
-
-.carousel-item.active {
-    opacity: 1; /* Visível quando ativo */
-}
-
-.carousel-inner {
-    overflow: hidden; /* Garante que os slides não transbordem */
-}
-/*carousel*/
-
-.paginacao {
-    background-color: var(--cor1);
-    border: 2px solid rgba(0, 0, 0, 0.13);
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.13), 0 17px 50px 0 rgba(0,0,0,0.13);
-    color: black;
-}
-
-.card-lista-solicitacao {
-    width: 25rem;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.13), 0 17px 50px 0 rgba(0,0,0,0.13);
-    background-color: var(--cor1);
-    text-align: left;
-}
-.card-lista-solicitacao img{
-    border-radius: 10px;
-    padding: 3px;
-}
-
-.card-lista-solicitacao:hover {
-    transform: scale(1.03);
-    transition: 1s;
-    cursor: pointer;
-}
-
-.card-lista-solicitacao h5{
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: normal;
-    color: var(--cor2);
-}
-
-.card-lista-solicitacao:hover h5{
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: normal;
-    color: var(--cor3);
-}
-
-.card-lista-solicitacao p{
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: normal;
-    color: var(--cor4);
-}
-
-.card-lista-solicitacao:hover p{
-    font-weight: 400;
-}
-
-input.listaCarrinho, input.listaCarrinho:disabled{
-    text-decoration: none;
-    background-color: white;
-    border: none;
-    outline: none;
-}
-
-div#navbarToggleExternalContent, nav#navCollapse{
-    visibility: hidden;
-}
-
-table>tbody>tr>td::first-letter{
-    text-transform: capitalize;
-}
-
-.icon-branco{
-    color: #ffffff;
-}
-
-.lista-rodape{
-    list-style-type: none;
-    margin: 5px;
-    padding: auto;
-}
-
-.link-rodape{
-    text-decoration: none;
-    list-style-type: none;
-}
-
-.link-rodape a{
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: none;
-    color: white;
-    margin-bottom: 10px;
-}
-
-.link-rodape a:hover{
+.footer a:hover {
     color: var(--cor3);
     text-decoration: underline;
 }
 
-
-body::-webkit-scrollbar{
-    scrollbar-width: thin;
-    background: var(--cor4);
-}
-
-body::-webkit-scrollbar-thumb{
-    background: var(--cor3);
-    border-radius: 20px;
-    border: 4px solid var(--cor4);
-}
-
-.color-dark{
-    background-color: #1c140d;
-    border: 2px solid white;
-    color: white;
-}
-
-.login{
-    min-width: 20em;
-}
-
-.footer {
-    position: relative;
-    margin-top: 3%;
-    padding: 1.5em 1em; /* Aumentado o padding */
-    width: 100%;
-    background-color: var(--cor2);
-    color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adicionando sombra */
-}
-
-.barra-progresso{
-    width: 100%;
-    height: 10px;
-    background-color: #e0e0e0;
-    position: relative;
-    overflow: hidden;
-}
-
-.card-lista-usuarios{
-    width: 18em;
-}
-
-.barra-progresso::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0%;
-    background-color: #4CAF50;
-    animation: load 2s linear forwards;
-}
-
-@keyframes load {
-    to {
-        width: 100%;
-    }
-}
 /* Responsividade */
 
 /* Telas pequenas (mobile) */
-@media screen and (max-width: 767px) {
-    #btnSideBar {
-        display: block; /* Mostra o botão em telas pequenas */
-    }
-
+@media (max-width: 576px) {
     body {
         grid-template-rows: auto 1fr auto;
     }
 
     header h1 {
-        font-size: 1.4rem;
-        padding: 10px;
+        font-size: 1.5rem;
     }
 
-    main {
-        grid-area: principal;
-        padding: 10px;
+    .nav {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .container {
-        gap: 10vh;
+    .nav a {
+        margin: 0.5rem 0;
     }
 
-    .card-lista-solicitacao {
-        width: 90%;
-        margin: 0 auto;
+    .imagem-topo {
+        height: 50vh;
+        padding: 1rem;
     }
 
-    footer {
-        grid-area: rodape;
-        padding: 10px;
-        font-size: 0.9rem;
+    .conteudo {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .btn-info {
-        font-size: 0.9rem;
-        padding: 8px 16px;
+    .imagem-topo a {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
     }
 }
 
 /* Telas médias (tablets) */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    #btnSideBar {
-        display: none; /* Esconde o botão em telas médias */
-    }
-
-    body {
-        grid-template-rows: 200px 1fr 200px;
-    }
-
+@media (min-width: 577px) and (max-width: 992px) {
     header h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
-    main {
-        padding: 15px;
+    .nav {
+        padding: 0.5rem;
     }
 
-    .container {
-        gap: 20vh;
+    .imagem-topo {
+        height: 75vh;
     }
 
-    .card-lista-solicitacao {
-        width: 45%;
+    #servicos {
+        padding: 1.5rem;
     }
 
-    footer {
-        padding: 15px;
-    }
-
-    .btn-info {
-        font-size: 1rem;
-        padding: 10px 20px;
+    #sobre {
+        padding: 1.5rem;
     }
 }
 
 /* Telas grandes (desktops) */
-@media screen and (min-width: 1024px) {
-    #btnSideBar {
-        display: none; /* Esconde o botão em telas grandes */
-    }
-
-    body {
-        grid-template-rows: 250px 1fr 250px;
-    }
-
+@media (min-width: 993px) {
     header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
-    main {
-        padding: 20px;
+    .nav {
+        justify-content: space-around;
     }
 
-    .container {
-        gap: 30vh;
+    #servicos {
+        flex-direction: row;
+        justify-content: space-around;
     }
 
-    .card-lista-solicitacao {
-        width: 300px;
+    #sobre {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    footer {
-        padding: 20px;
+    .imagem-topo {
+        height: 100vh;
     }
 
-    .btn-info {
-        font-size: 1.1rem;
-        padding: 12px 24px;
+    .imagem-topo a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
     }
 }
