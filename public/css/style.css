@@ -67,6 +67,21 @@ header h1 {
     transition: color 0.3s;
 }
 
+.nav .btn-login{
+    text-decoration: none;
+    border: 3px solid var(--cor1);
+    padding: 10px 15px ;
+    
+}
+
+.nav .btn-login:hover{
+    border: none;
+    background-color: var(--cor3);
+    color: var(--cor1);
+    padding: 13px 18px;
+    transition: color 0.5s;
+}
+
 .imagem-topo {
     position: static;
     background-image: url("../img/topo-02.webp"); /* Substitua pelo caminho correto */
@@ -173,7 +188,6 @@ header h1 {
     grid-area: rodape;
     background-color: var(--cor2);
     color: var(--cor1);
-    text-align: center;
     padding: 1rem;
 }
 
@@ -184,6 +198,15 @@ header h1 {
 .footer a:hover {
     color: var(--cor3);
     text-decoration: underline;
+}
+
+.conteudo-horario{
+    display: flex;
+    flex-direction: row;
+}
+
+.lista-rodape, .link-rodape{
+    list-style: none;
 }
 
 /* Responsividade */

@@ -5,10 +5,10 @@
 </section>
 
 <section class="container mt-4" id="sobre">
-    <h1>Somos uma barbearia de tradição.</h1>
-    <div class="conteudo">
-        <div class="card card-sobre">
-            <div class="card-body">
+    <div class="d-flex flex-column">
+        <h1 class="align-self-center">Somos uma barbearia de tradição.</h1>
+        <div class=" d-flex flex-row align-content-stretch">
+            <p class="p-2">
                 Na nossa barbearia, acreditamos que cuidar do visual vai além de um simples corte de cabelo ou
                 barba — é uma
                 experiência que combina estilo, conforto e excelência. Com uma equipe dedicada e apaixonada pelo
@@ -18,9 +18,9 @@
                 inovação se unem para criar um ambiente acolhedor onde você pode relaxar, renovar o visual e
                 sair com a
                 confiança renovada. Mais do que uma barbearia, somos um espaço feito para você.
-            </div>
+            </p>
+            <img src="img/sobre/01.webp" alt="imagem da barbearia" class="img-sobre flex-grow-1">
         </div>
-        <img src="img/sobre/01.webp" alt="imagem da barbearia" class="img-sobre">
     </div>
 </section>
 
@@ -28,135 +28,140 @@
 <!-- TODO: 1 - Colocar os H1 encima do container;
            2 - Descrição e imagem lado a lado; -->
 <section class="container mt-4" id="servicos">
-    <h1>Nossos serviços</h1>
-    <div id="carouselServicos" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="d-flex justify-content-center">
-                    <div class="card card-lista-solicitacao ms-3 mb-3">
-                        <img src="img/servicos/01.webp" class="card-img-top" alt="Corte Masculino Tradicional">
-                        <div class="card-body">
-                            <h5 class="card-title">Corte Masculino Tradicional</h5>
-                            <p class="card-text">Um estilo clássico e atemporal que valoriza linhas limpas e elegância.
-                                O corte
-                                masculino tradicional combina praticidade e sofisticação, com técnicas que realçam a
-                                personalidade e
-                                o formato do rosto. Ideal para homens que buscam um visual profissional e versátil,
-                                mantendo um
-                                toque moderno sem abrir mão da tradição.</p>
+    <div class="d-flex flex-column">
+        <h1 class="align-self-center">Nossos serviços</h1>
+        <div class="d-flex flex-row align-content-stretch p-2">
+            <div id="carouselServicos" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="card card-lista-solicitacao ms-3 mb-3">
+                                <img src="img/servicos/01.webp" class="card-img-top" alt="Corte Masculino Tradicional">
+                                <div class="card-body">
+                                    <h5 class="card-title">Corte Masculino Tradicional</h5>
+                                    <p class="card-text">Um estilo clássico e atemporal que valoriza linhas limpas e elegância.
+                                        O corte
+                                        masculino tradicional combina praticidade e sofisticação, com técnicas que realçam a
+                                        personalidade e
+                                        o formato do rosto. Ideal para homens que buscam um visual profissional e versátil,
+                                        mantendo um
+                                        toque moderno sem abrir mão da tradição.</p>
+                                </div>
+                            </div>
+                            <div class="card card-lista-solicitacao ms-3 mb-3">
+                                <img src="img/servicos/02.webp" class="card-img-top" alt="Corte Moderno">
+                                <div class="card-body">
+                                    <h5 class="card-title">Corte Moderno</h5>
+                                    <p class="card-text">Estilo atual e arrojado, ideal para quem gosta de inovar e expressar
+                                        personalidade
+                                        por meio do visual. O corte moderno aposta em tendências, texturas e acabamentos
+                                        ousados,
+                                        adaptando-se a diferentes formatos de rosto e estilos de vida. Perfeito para quem busca
+                                        um visual
+                                        único, marcante e cheio de atitude.</p>
+                                </div>
+                            </div>
+                            <div class="card card-lista-solicitacao ms-3 mb-3">
+                                <img src="img/servicos/03.webp" class="card-img-top" alt="Aparar e Modelar a Barba">
+                                <div class="card-body">
+                                    <h5 class="card-title">Aparar e Modelar a Barba</h5>
+                                    <p class="card-text">Cuidado essencial para manter a barba alinhada, saudável e com um
+                                        visual impecável.
+                                        O serviço de aparar e modelar a barba envolve técnicas precisas para definir contornos,
+                                        ajustar o
+                                        comprimento e criar um estilo que valorize os traços do rosto. Perfeito para quem busca
+                                        um look
+                                        elegante e bem cuidado, seja clássico ou moderno.</p>
+                                </div>
+                            </div>
+                            <div class="card card-lista-solicitacao ms-3 mb-3">
+                                <img src="img/servicos/01.webp" class="card-img-top" alt="Barba Completa com Toalha Quente">
+                                <div class="card-body">
+                                    <h5 class="card-title">Barba Completa com Toalha Quente</h5>
+                                    <p class="card-text">Uma experiência sofisticada e relaxante que combina cuidado e estilo.
+                                        Este serviço
+                                        inclui o aparar, modelar e alinhar a barba, acompanhado pelo uso da toalha quente, que
+                                        suaviza os
+                                        fios e proporciona conforto durante o processo. Ideal para quem deseja um visual
+                                        impecável enquanto
+                                        desfruta de um momento de cuidado e bem-estar.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card card-lista-solicitacao ms-3 mb-3">
-                        <img src="img/servicos/02.webp" class="card-img-top" alt="Corte Moderno">
-                        <div class="card-body">
-                            <h5 class="card-title">Corte Moderno</h5>
-                            <p class="card-text">Estilo atual e arrojado, ideal para quem gosta de inovar e expressar
-                                personalidade
-                                por meio do visual. O corte moderno aposta em tendências, texturas e acabamentos
-                                ousados,
-                                adaptando-se a diferentes formatos de rosto e estilos de vida. Perfeito para quem busca
-                                um visual
-                                único, marcante e cheio de atitude.</p>
-                        </div>
-                    </div>
-                    <div class="card card-lista-solicitacao ms-3 mb-3">
-                        <img src="img/servicos/03.webp" class="card-img-top" alt="Aparar e Modelar a Barba">
-                        <div class="card-body">
-                            <h5 class="card-title">Aparar e Modelar a Barba</h5>
-                            <p class="card-text">Cuidado essencial para manter a barba alinhada, saudável e com um
-                                visual impecável.
-                                O serviço de aparar e modelar a barba envolve técnicas precisas para definir contornos,
-                                ajustar o
-                                comprimento e criar um estilo que valorize os traços do rosto. Perfeito para quem busca
-                                um look
-                                elegante e bem cuidado, seja clássico ou moderno.</p>
-                        </div>
-                    </div>
-                    <div class="card card-lista-solicitacao ms-3 mb-3">
-                        <img src="img/servicos/01.webp" class="card-img-top" alt="Barba Completa com Toalha Quente">
-                        <div class="card-body">
-                            <h5 class="card-title">Barba Completa com Toalha Quente</h5>
-                            <p class="card-text">Uma experiência sofisticada e relaxante que combina cuidado e estilo.
-                                Este serviço
-                                inclui o aparar, modelar e alinhar a barba, acompanhado pelo uso da toalha quente, que
-                                suaviza os
-                                fios e proporciona conforto durante o processo. Ideal para quem deseja um visual
-                                impecável enquanto
-                                desfruta de um momento de cuidado e bem-estar.</p>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="card card-lista-solicitacao ms-3 mb-3">
+                                <img src="img/servicos/05.webp" class="card-img-top" alt="Corte Infantil">
+                                <div class="card-body">
+                                    <h5 class="card-title">Corte Infantil</h5>
+                                    <p class="card-text">Um estilo criativo e personalizado que transforma o corte em arte. A
+                                        raspagem de
+                                        cabeça com hair tattoo permite criar desenhos, padrões e traços únicos diretamente no
+                                        couro
+                                        cabeludo. Perfeito para quem busca um visual ousado e exclusivo, com total liberdade
+                                        para expressar
+                                        sua identidade</p>
+                                </div>
+                            </div>
+                            <div class="card card-lista-solicitacao ms-3 mb-3">
+                                <img src="img/servicos/06.webp" class="card-img-top" alt="Raspagem de Cabeça">
+                                <div class="card-body">
+                                    <h5 class="card-title">Raspagem de Cabeça</h5>
+                                    <p class="card-text">Cuidado especializado para revitalizar e fortalecer os cabelos. Este
+                                        serviço
+                                        restaura a maciez, o brilho e a saúde dos fios, combatendo ressecamento, frizz e outros
+                                        danos. Ideal
+                                        para quem deseja cabelos mais resistentes, bonitos e bem cuidados, com um toque de
+                                        renovação.</p>
+                                </div>
+                            </div>
+                            <div class="card card-lista-solicitacao ms-3 mb-3">
+                                <img src="img/servicos/07.webp" class="card-img-top" alt="Hidratação e Tratamento">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hidratação e Tratamento</h5>
+                                    <p class="card-text">Uma opção versátil para renovar o visual, disfarçar os fios brancos ou
+                                        apostar em
+                                        tons modernos. A coloração masculina utiliza técnicas que garantem um resultado natural
+                                        e
+                                        personalizado, respeitando o estilo e a personalidade de cada cliente. Ideal para quem
+                                        busca
+                                        destacar sua identidade com confiança e sofisticação.</p>
+                                </div>
+                            </div>
+                            <div class="card card-lista-solicitacao ms-3 mb-3">
+                                <img src="img/servicos/08.webp" class="card-img-top" alt="Coloração Masculina">
+                                <div class="card-body">
+                                    <h5 class="card-title">Coloração Masculina</h5>
+                                    <p class="card-text">Técnicas que promovem fios mais lisos, alinhados e com movimento
+                                        natural. O
+                                        relaxamento reduz o volume e define os cachos, enquanto o alisamento elimina ondulações,
+                                        proporcionando um visual sofisticado e fácil de manter. Ideal para quem busca
+                                        praticidade e estilo
+                                        no dia a dia, sem abrir mão da saúde dos cabelos</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card card-lista-solicitacao ms-3 mb-3">
-                        <img src="img/servicos/05.webp" class="card-img-top" alt="Corte Infantil">
-                        <div class="card-body">
-                            <h5 class="card-title">Corte Infantil</h5>
-                            <p class="card-text">Um estilo criativo e personalizado que transforma o corte em arte. A
-                                raspagem de
-                                cabeça com hair tattoo permite criar desenhos, padrões e traços únicos diretamente no
-                                couro
-                                cabeludo. Perfeito para quem busca um visual ousado e exclusivo, com total liberdade
-                                para expressar
-                                sua identidade</p>
-                        </div>
-                    </div>
-                    <div class="card card-lista-solicitacao ms-3 mb-3">
-                        <img src="img/servicos/06.webp" class="card-img-top" alt="Raspagem de Cabeça">
-                        <div class="card-body">
-                            <h5 class="card-title">Raspagem de Cabeça</h5>
-                            <p class="card-text">Cuidado especializado para revitalizar e fortalecer os cabelos. Este
-                                serviço
-                                restaura a maciez, o brilho e a saúde dos fios, combatendo ressecamento, frizz e outros
-                                danos. Ideal
-                                para quem deseja cabelos mais resistentes, bonitos e bem cuidados, com um toque de
-                                renovação.</p>
-                        </div>
-                    </div>
-                    <div class="card card-lista-solicitacao ms-3 mb-3">
-                        <img src="img/servicos/07.webp" class="card-img-top" alt="Hidratação e Tratamento">
-                        <div class="card-body">
-                            <h5 class="card-title">Hidratação e Tratamento</h5>
-                            <p class="card-text">Uma opção versátil para renovar o visual, disfarçar os fios brancos ou
-                                apostar em
-                                tons modernos. A coloração masculina utiliza técnicas que garantem um resultado natural
-                                e
-                                personalizado, respeitando o estilo e a personalidade de cada cliente. Ideal para quem
-                                busca
-                                destacar sua identidade com confiança e sofisticação.</p>
-                        </div>
-                    </div>
-                    <div class="card card-lista-solicitacao ms-3 mb-3">
-                        <img src="img/servicos/08.webp" class="card-img-top" alt="Coloração Masculina">
-                        <div class="card-body">
-                            <h5 class="card-title">Coloração Masculina</h5>
-                            <p class="card-text">Técnicas que promovem fios mais lisos, alinhados e com movimento
-                                natural. O
-                                relaxamento reduz o volume e define os cachos, enquanto o alisamento elimina ondulações,
-                                proporcionando um visual sofisticado e fácil de manter. Ideal para quem busca
-                                praticidade e estilo
-                                no dia a dia, sem abrir mão da saúde dos cabelos</p>
-                        </div>
-                    </div>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselServicos" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselServicos" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselServicos" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselServicos" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Próximo</span>
-        </button>
+
     </div>
 
 </section>
 
 <section class="container mt-4" id="contato">
-    <div class="conteudo">
-        <div class="card">
+    <div class="d-flex flex-row">
+        <div class="card border border-end">
             <div class="card-body">
                 <form name="whatsapp-handle">
                     <legend>Nos envie uma mensagem: </legend>
@@ -180,11 +185,11 @@
                 </form>
             </div>
         </div>
-        <div class="card">
+        <div class="card border border-0">
             <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227.91878377330895!2d-54.282753037062434!3d-23.935655942108255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x948b4dc91c8af5d9%3A0x19bbdfe861a063b9!2sEAD%20UniCesumar%20-%20Mundo%20Novo%2FMS!5e0!3m2!1spt-PT!2sbr!4v1735663280005!5m2!1spt-PT!2sbr" width="500" height="auto" style="border:0;" allowfullscreen="" loading="lazy"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227.91878377330895!2d-54.282753037062434!3d-23.935655942108255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x948b4dc91c8af5d9%3A0x19bbdfe861a063b9!2sEAD%20UniCesumar%20-%20Mundo%20Novo%2FMS!5e0!3m2!1spt-PT!2sbr!4v1735663280005!5m2!1spt-PT!2sbr" width="700" height="350" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe></li>
                     <li class="list-group-item">
                         <address>
