@@ -1,46 +1,41 @@
-<div class="d-flex justify-content-center">
-    <div class="col-3 card login">
-        <div class="card-body">
-            <form id="formLogin" action="/login">
-                <h1 id="formLoginTitle" class="card-title text-center">Efetuar Log-in</h1>
-                <fieldset aria-labelledby="formLoginTitle">
-                    <section class="m-3">
-                        <label class="form-label" for="cpf">CPF:</label>
-                        <input type="text"
-                               name="cpf"
-                               id="cpf"
-                               class="form-control"
-                               maxlength="14"
-                               oninput="mascaraCPF(this), validarCPF(this)"
-                               placeholder="000.000.000-00"
-                               aria-required="true"
-                               aria-describedby="cpfFormat"
-                               required>
-                        <small id="cpfFormat" class="text-muted">Digite no formato 000.000.000-00</small>
-                    </section>
-                    <section class="m-3">
-                        <label class="form-label" for="senha">Senha:</label>
-                        <input type="password"
-                               name="senha"
-                               id="senha"
-                               class="form-control"
-                               placeholder="Senha"
-                               aria-required="true"
-                               required>
-                    </section>
-                    <section class="m-3">
-                        <a href="/esquecerSenha" class="btn-link small" aria-label="Esqueci minha senha">Esqueci minha senha</a>
-                    </section>
-                    <section class="d-grid gap-2">
-                        <button type="submit" class="btn btn-lg btn-primary m-3" aria-label="Confirmar log-in">Entrar</button>
-                    </section>
-                </fieldset>
-            </form>
+<img src="/img/topo.webp" alt="imagem de background" class="backgroung-login">
+<section class="d-flex flex-column">
+    <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="card w-100">
+            <div class="card-body">
+                <form id="formLogin" name="formLogin" action="/login">
+                    <legend id="formLoginTitle" class="card-title text-center">Efetuar Log-in</legend>
+                    <fieldset aria-labelledby="formLoginTitle">
+                        <section class="m-3">
+                            <label class="form-label" for="email">E-mail:</label>
+                            <input type="text" name="email" id="email" class="form-control" placeholder="seu@email.aqui" aria-required="true" aria-describedby="emailFormat"  required>
+                            <small id="cpfFormat" class="text-muted">Digite no formato exemplo@email.com</small>
+                        </section>
+                        <section class="m-3">
+                            <label class="form-label" for="senha">Senha:</label>
+                            <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha"
+                                aria-required="true" required>
+                        </section>
+                        <section class="m-3">
+                            <a href="/esquecerSenha" class="btn-link small" aria-label="Esqueci minha senha">Esqueci
+                                minha senha</a>
+                        </section>
+                        <section class="d-grid gap-2">
+                            <button type="submit" class="btn btn-lg btn-primary m-3"
+                                aria-label="Confirmar log-in">Entrar</button>
+                            <div class="d-flex flex-column">
+                                <span class="align-self-center">Ainda não tem Conta?</span>
+                                <a href="/criarConta" class="align-self-center">Clique aqui para criar.</a>
+                            </div>
+                        </section>
+                    </fieldset>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
 
 <script type="module" src="/js/login/login.js"></script>
 <script type="module" src="/js/funcoes.js"></script>
 <script src="/js/login/util.js"></script>
-

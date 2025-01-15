@@ -1,12 +1,12 @@
 const express = require('express')
 const mongoose = require("mongoose")
 const router = express.Router()
-require('../../models/Usuario')
-const Usuario = mongoose.model('usuario')
+require('../../models/Cliente')
+const Cliente = mongoose.model('cliente')
 const passport = require("passport")
-const trocarSenha = require('./trocarSenha')
+const esquecerSenha = require('./esquecerSenha')
 
-router.use("/trocarSenha", trocarSenha)
+router.use("/esquecerSenha", esquecerSenha)
 
 router.get('/', (req, res) => {
     res.render("login/")
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
 router.post('/login', async (req, res, next) => {
     try{
-        const usuario = await Usuario.findOne({cpf: req.body.cpf})
+        const usuario = await Cliente.findOne({cpf: req.body.cpf})
         if(!usuario.senhaPadraoAlterada && req.body.senha == 'Trocar@$1234'){
             res.json({trocarSenha:true})
             return

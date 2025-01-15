@@ -35,9 +35,7 @@ a {
 
 header {
     grid-area: cabecalho;
-    background-color: var(--cor3-1);
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
@@ -45,6 +43,12 @@ header h1 {
     font-size: 2rem;
     color: var(--cor1);
     margin: 1rem;
+}
+
+main{
+    grid-area: principal;
+    position: relative;
+    top: 9rem;
 }
 
 .nav {
@@ -188,6 +192,8 @@ header h1 {
     grid-area: rodape;
     background-color: var(--cor2);
     color: var(--cor1);
+    position: relative;
+    top: 9rem;
     padding: 1rem;
 }
 
@@ -209,6 +215,25 @@ header h1 {
     list-style: none;
 }
 
+.backgroung-login{
+    position: static;
+    background-size: cover; /* Preenche completamente */
+    background-repeat: no-repeat; /* Evita repetição */
+    background-position: center; /* Centraliza a imagem */
+    width: 100%; /* Largura igual à largura da janela */
+    height: 100%;
+}
+
+legend{
+    font-family: "Poppins", serif;
+    font-weight: 600;
+}
+
+iframe{
+    width:100%;
+    height:30%;
+    border-style: none;
+}
 /* Responsividade */
 
 /* Telas pequenas (mobile) */

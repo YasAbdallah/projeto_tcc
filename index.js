@@ -9,7 +9,7 @@ const flash = require("connect-flash")
 const passport = require('passport')
 require("./config/auth")(passport)
 const db = require("./config/db")
-//const mensagem = require('./routes/whatsapp-handle/mensagem')
+const login = require('./routes/login/login')
 const { config } = require("process")
 const app = express()
 
@@ -73,6 +73,9 @@ app.use(express.static(path.join(__dirname, "public")))
 //Rotas
 app.get('/', (req, res) => {
     res.render('index')
+})
+app.get('/login', (req, res) => {
+    res.render('login/index')
 })
 
 //app.use("/mensagem", mensagem)

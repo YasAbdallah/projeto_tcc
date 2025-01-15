@@ -1,8 +1,8 @@
 const express = require('express')
 const mongoose = require("mongoose")
 const router = express.Router()
-require('../../models/Usuario')
-const Usuario = mongoose.model('usuario')
+require('../../models/Cliente')
+const Cliente = mongoose.model('cliente')
 const bcrypt = require('bcryptjs')
 const {validarCampo} = require("../../helpers/funcoes")
 
@@ -18,8 +18,8 @@ router.post('/esquecerSenha', async (req, res) => {
         {campo: novaSenha2, mensagem: "Senha inválida. Verifique se a senha contém os padrões de segurança obrigatório."},
     ]
 
-    const usuario = await Usuario.findOne({cpf: cpf})
-    if (usuario){
+    const cliente = await Cliente.findOne({cpf: cpf})
+    if (cliente){
         validacao.forEach((campo, mensagem) => {
             const erro = validarCampo(campo, mensagem)
             if (erro) return res.json({sucesso: false, message: erro})
@@ -30,7 +30,7 @@ router.post('/esquecerSenha', async (req, res) => {
         try{
             const salt = await bcrypt.genSalt(10)
             const hash = await bcrypt.hash(novaSenha, salt)
-            await Usuario.updateOne({id: req.body.id}, {senha: hash})
+            await Cliente.updateOne({id: req.body.id}, {senha: hash})
             res.json({sucesso: true, message: "Senha alterada com sucesso."})
             return
         }catch(error){

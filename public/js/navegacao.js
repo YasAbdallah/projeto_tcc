@@ -1,12 +1,17 @@
-document.getElementById("a").addEventListener("click", function () {
-    document.getElementById("home").scrollIntoView({ behavior: "smooth" });
-});
-document.getElementById("a").addEventListener("click", function () {
-    document.getElementById("servicos").scrollIntoView({ behavior: "smooth" });
-});
-document.getElementById("a").addEventListener("click", function () {
-    document.getElementById("contato").scrollIntoView({ behavior: "smooth" });
-});
-document.getElementById("a").addEventListener("click", function () {
-    document.getElementById("sobre").scrollIntoView({ behavior: "smooth" });
-});
+document.onload = () => {
+    navegacao("servicos")
+    navegacao("contato")
+    navegacao("sobre")
+}
+
+
+const navegacao = (topico) => {
+    document.getElementById("a").addEventListener("click", function () {
+        const target = document.getElementById(topico);
+        const offsetTop = target.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth"
+        });
+    })
+}
