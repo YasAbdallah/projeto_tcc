@@ -36,11 +36,12 @@ a {
 header {
     grid-area: cabecalho;
     text-align: center;
+    min-width: 650px;
 }
 
 header h1 {
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--cor1);
     margin: 1rem;
 }
@@ -55,8 +56,9 @@ main{
     display: flex;
     justify-content: center;
     background-color: var(--cor2);
-    padding: 1rem;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+    padding: 0.5rem;
+    min-height: 150px;
 }
 
 .nav a {
@@ -74,7 +76,7 @@ main{
 .nav .btn-login{
     text-decoration: none;
     border: 3px solid var(--cor1);
-    padding: 10px 15px ;
+    padding: 10px 15px;
     
 }
 
@@ -131,6 +133,7 @@ main{
     align-items: center;
     gap: 20px;
     padding: 2rem;
+    min-width: 650px;
 }
 
 #sobre {
@@ -139,6 +142,7 @@ main{
     gap: 10px;
     padding: 2rem;
     scroll-margin-top: 130px;
+    min-width: 650px;
 }
 
 #sobre h1 {
@@ -166,6 +170,7 @@ main{
     align-items: center;
     padding: 2rem;
     scroll-margin-top: 130px;
+    min-width: 650px;
 }
 
 #contato form {
@@ -198,6 +203,7 @@ main{
     position: relative;
     top: 9rem;
     padding: 1rem;
+    min-width: 650px;
 }
 
 .footer a {
@@ -237,16 +243,40 @@ iframe{
     height:30%;
     border-style: none;
 }
+
+.conteudo-servico{
+    display: flex;
+    justify-content: center;
+}
 /* Responsividade */
 
 /* Telas pequenas (mobile) */
-@media (max-width: 576px) {
-    body {
-        grid-template-rows: auto 1fr auto;
+@media (max-width: 998px) {
+    .nav-buttons, #navPadrao{
+        display: none;
+        visibility: hidden;
+    }
+    
+    #navPequena {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        align-self: start;
+        margin: auto;
     }
 
-    header h1 {
-        font-size: 1.5rem;
+    #btnSideBar{
+        background-color: var(--cor1);
+        color: var(--cor3);
+        visibility: visible;
+        position: relative;
+        padding: 10px 15px;
+        margin: auto;
+    }
+
+
+    body {
+        grid-template-rows: auto 1fr auto;
     }
 
     .nav {
@@ -254,13 +284,10 @@ iframe{
         align-items: center;
     }
 
-    .nav a {
-        margin: 0.5rem 0;
-    }
-
     .imagem-topo {
         height: 50vh;
         padding: 1rem;
+        min-width: 650px;
     }
 
     .conteudo {
@@ -272,15 +299,25 @@ iframe{
         font-size: 1rem;
         padding: 0.8rem 1.5rem;
     }
-    #contato{
-        scroll-margin-top: 130px;
+
+
+    .conteudo-servico{
+        flex-wrap: wrap;
     }
+    
+    
 }
 
 /* Telas médias (tablets) */
-@media (min-width: 577px) and (max-width: 992px) {
-    header h1 {
-        font-size: 1.8rem;
+@media (min-width: 999px) and (max-width: 1299px) {
+
+    #navPequena{
+        display: none;
+        visibility: hidden;
+    }
+
+    body {
+        grid-template-rows: auto 1fr auto;
     }
 
     .nav {
@@ -289,45 +326,31 @@ iframe{
 
     .imagem-topo {
         height: 75vh;
+        padding: 1rem;
     }
 
-    #servicos {
-        scroll-margin-top: 130px;
-        padding: 1.5rem;
+    .conteudo-servico{
+        flex-wrap: wrap;
     }
-
-    #sobre {
-        padding: 1.5rem;
-        scroll-margin-top: 130px;
-    }
-
-    #contato{
-        scroll-margin-top: 130px;
+    .card-lista-solicitacao{
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
     }
 }
 
 /* Telas grandes (desktops) */
-@media (min-width: 993px) {
-    header h1 {
-        font-size: 2.5rem;
+@media (min-width: 1200px){
+    
+    #navPequena{
+        display: none;
+        visibility: hidden;
     }
 
     .nav {
         justify-content: space-around;
+        padding: 0.5rem;
     }
-
-    #servicos {
-        scroll-margin-top: 130px;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    #sobre {
-        flex-direction: row;
-        justify-content: space-between;
-        scroll-margin-top: 130px;
-    }
-
+    
     .imagem-topo {
         height: 100vh;
     }
@@ -335,8 +358,5 @@ iframe{
     .imagem-topo a {
         font-size: 1.2rem;
         padding: 1rem 2rem;
-    }
-    #contato{
-        scroll-margin-top: 130px;
     }
 }
