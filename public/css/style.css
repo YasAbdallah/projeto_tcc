@@ -125,6 +125,7 @@ main{
 }
 
 #servicos {
+    scroll-margin-top: 130px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,6 +138,7 @@ main{
     flex-direction: column;
     gap: 10px;
     padding: 2rem;
+    scroll-margin-top: 130px;
 }
 
 #sobre h1 {
@@ -163,6 +165,7 @@ main{
     flex-direction: column;
     align-items: center;
     padding: 2rem;
+    scroll-margin-top: 130px;
 }
 
 #contato form {
@@ -269,6 +272,9 @@ iframe{
         font-size: 1rem;
         padding: 0.8rem 1.5rem;
     }
+    #contato{
+        scroll-margin-top: 130px;
+    }
 }
 
 /* Telas médias (tablets) */
@@ -286,11 +292,17 @@ iframe{
     }
 
     #servicos {
+        scroll-margin-top: 130px;
         padding: 1.5rem;
     }
 
     #sobre {
         padding: 1.5rem;
+        scroll-margin-top: 130px;
+    }
+
+    #contato{
+        scroll-margin-top: 130px;
     }
 }
 
@@ -305,6 +317,7 @@ iframe{
     }
 
     #servicos {
+        scroll-margin-top: 130px;
         flex-direction: row;
         justify-content: space-around;
     }
@@ -312,6 +325,7 @@ iframe{
     #sobre {
         flex-direction: row;
         justify-content: space-between;
+        scroll-margin-top: 130px;
     }
 
     .imagem-topo {
@@ -321,5 +335,8 @@ iframe{
     .imagem-topo a {
         font-size: 1.2rem;
         padding: 1rem 2rem;
+    }
+    #contato{
+        scroll-margin-top: 130px;
     }
 }
