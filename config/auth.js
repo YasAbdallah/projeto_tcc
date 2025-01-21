@@ -14,7 +14,7 @@ module.exports = function (passport) {
         Cliente.findOne({ email: email }).then((usuario) => {
             if (!usuario) {
                 // Se não encontrar no modelo Cliente, busca no modelo Barbeiro
-                return Barbeiro.findOne({ email: email }).then((barbeiro) => {
+                Barbeiro.findOne({ email: email }).then((barbeiro) => {
                     if (!barbeiro) {
                         return done(null, false, { message: "Usuário ou senha incorretos." });
                     }
@@ -30,12 +30,14 @@ module.exports = function (passport) {
             }
             // Comparação de senha para Cliente
             bcrypt.compare(senha, usuario.senha, (err, iguais) => {
+                console.log(senha, usuario.senha, iguais, err)
                 if (iguais) {
                     return done(null, usuario);
                 } else {
                     return done(null, false, { message: "Usuário ou senha incorretos." });
                 }
             });
+            
         }).catch((err) => done(err));
     }));
 

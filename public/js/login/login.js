@@ -14,19 +14,15 @@ const formulariologin = async () => {
             
             const formData = new FormData(form)
             const data = Object.fromEntries(formData.entries())
-            data.cpf = data.cpf.replace(/\D/g, "")
             try{
                 const response = await fetch("/login/login", { //Aqui tem que ter o caminho e o nome da função! 
-                    method: "post",
+                    method: "POST",
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify(data)
                 })
                 if(response.ok){
                     const result = await response.json()
-                    if(result.trocarSenha){
-                        await popup(popupSucesso, {sucesso:true, message:"Redirecionando para troca de senha."})
-                        window.location.href = "login/trocarSenha"
-                    } 
+                    console.log(response)
                     if(result.sucesso){
                         await popup(popupSucesso, result)
                         window.location.href = "/"

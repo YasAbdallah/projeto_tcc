@@ -74,9 +74,9 @@ app.use(express.static(path.join(__dirname, "public")))
 app.get('/', (req, res) => {
     res.render('index')
 })
-app.get('/login', (req, res) => {
-    res.render('login/index')
-})
+
+app.use("/login", login)
+
 
 //app.use("/mensagem", mensagem)
 app.get('*', (req, res) => {

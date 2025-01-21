@@ -3,18 +3,18 @@
     <div class="position-absolute top-50 start-50 translate-middle">
         <div class="card w-100">
             <div class="card-body">
-                <form id="formLogin" name="formLogin" action="/login">
+                <form id="formLogin" name="formLogin">
                     <legend id="formLoginTitle" class="card-title text-center">Efetuar Log-in</legend>
                     <fieldset aria-labelledby="formLoginTitle">
                         <section class="m-3">
                             <label class="form-label" for="email">E-mail:</label>
-                            <input type="text" name="email" id="email" class="form-control" placeholder="seu@email.aqui" aria-required="true" aria-describedby="emailFormat"  required>
+                            <input type="text" name="email" id="email" class="form-control" placeholder="seu@email.aqui" aria-required="true" aria-describedby="emailFormat" autocomplete="email" required>
                             <small id="cpfFormat" class="text-muted">Digite no formato exemplo@email.com</small>
                         </section>
                         <section class="m-3">
                             <label class="form-label" for="senha">Senha:</label>
                             <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha"
-                                aria-required="true" required>
+                                aria-required="true" autocomplete="current-password" required>
                         </section>
                         <section class="m-3">
                             <a href="/esquecerSenha" class="btn-link small" aria-label="Esqueci minha senha">Esqueci

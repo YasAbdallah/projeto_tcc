@@ -46,7 +46,7 @@ header h1 {
     margin: 1rem;
 }
 
-main{
+main {
     grid-area: principal;
     position: relative;
     top: 9rem;
@@ -73,14 +73,14 @@ main{
     transition: color 0.3s;
 }
 
-.nav .btn-login{
+.nav .btn-login {
     text-decoration: none;
     border: 3px solid var(--cor1);
     padding: 10px 15px;
-    
+
 }
 
-.nav .btn-login:hover{
+.nav .btn-login:hover {
     border: none;
     background-color: var(--cor3);
     color: var(--cor1);
@@ -90,20 +90,34 @@ main{
 
 .imagem-topo {
     position: static;
-    background-image: url("../img/topo-02.webp"); /* Substitua pelo caminho correto */
-    background-size: cover; /* Preenche completamente */
-    background-repeat: no-repeat; /* Evita repetição */
-    background-position: center; /* Centraliza a imagem */
-    width: 100%; /* Largura igual à largura da janela */
-    height: 100vh; /* Altura igual à altura da janela */
-    margin: 0; /* Remove margens */
-    padding: 0; /* Remove preenchimentos */
-    display: flex; /* Torna-se um contêiner flexível */
-    flex-direction: column; /* Organiza os elementos verticalmente */
-    justify-content: center; /* Centraliza os itens no eixo vertical */
-    align-items: center; /* Centraliza os itens no eixo horizontal */
-    text-align: center; /* Centraliza o texto */
-    overflow: hidden; /* Evita overflow */
+    background-image: url("../img/topo-02.webp");
+    /* Substitua pelo caminho correto */
+    background-size: cover;
+    /* Preenche completamente */
+    background-repeat: no-repeat;
+    /* Evita repetição */
+    background-position: center;
+    /* Centraliza a imagem */
+    width: 100%;
+    /* Largura igual à largura da janela */
+    height: 100vh;
+    /* Altura igual à altura da janela */
+    margin: 0;
+    /* Remove margens */
+    padding: 0;
+    /* Remove preenchimentos */
+    display: flex;
+    /* Torna-se um contêiner flexível */
+    flex-direction: column;
+    /* Organiza os elementos verticalmente */
+    justify-content: center;
+    /* Centraliza os itens no eixo vertical */
+    align-items: center;
+    /* Centraliza os itens no eixo horizontal */
+    text-align: center;
+    /* Centraliza o texto */
+    overflow: hidden;
+    /* Evita overflow */
 }
 
 .imagem-topo h1 {
@@ -215,48 +229,90 @@ main{
     text-decoration: underline;
 }
 
-.conteudo-horario{
+.conteudo-horario {
     display: flex;
     flex-direction: row;
 }
 
-.lista-rodape, .link-rodape{
+.lista-rodape,
+.link-rodape {
     list-style: none;
 }
 
-.backgroung-login{
+.backgroung-login {
     position: static;
-    background-size: cover; /* Preenche completamente */
-    background-repeat: no-repeat; /* Evita repetição */
-    background-position: center; /* Centraliza a imagem */
-    width: 100%; /* Largura igual à largura da janela */
+    background-size: cover;
+    /* Preenche completamente */
+    background-repeat: no-repeat;
+    /* Evita repetição */
+    background-position: center;
+    /* Centraliza a imagem */
+    width: 100%;
+    /* Largura igual à largura da janela */
     height: 100%;
 }
 
-legend{
+legend {
     font-family: "Poppins", serif;
     font-weight: 600;
 }
 
-iframe{
-    width:100%;
-    height:30%;
+iframe {
+    width: 100%;
+    height: 30%;
     border-style: none;
 }
 
-.conteudo-servico{
+.conteudo-servico {
     display: flex;
     justify-content: center;
 }
+
+.custom-toast {
+    position: absolute;
+    /* Fixa o elemento na viewport */
+    top: 10px;
+    /* Ajusta a distância do topo */
+    left: 50%;
+    /* Centraliza horizontalmente */
+    transform: translateX(-50%);
+    /* Corrige o deslocamento para centralização */
+    z-index: 9999 !important;
+    /* Garante que fique acima de outros elementos (maior que modais do Bootstrap) */
+    max-width: 90%;
+    /* Define um limite de largura para telas pequenas */
+    width: auto;
+    /* Ajusta o tamanho automaticamente ao conteúdo */
+    pointer-events: auto;
+    /* Permite interação com o elemento */
+}
+
+.custom-toast .toast-header {
+    background-color: #f8d7da;
+    /* Fundo claro para o cabeçalho */
+    color: #721c24;
+    /* Cor do texto de erro */
+    border-bottom: 1px solid #f5c6cb;
+    /* Linha divisória */
+}
+
+.custom-toast .toast-body {
+    background-color: #fff;
+    /* Fundo branco */
+}
+
+
 /* Responsividade */
 
 /* Telas pequenas (mobile) */
 @media (max-width: 998px) {
-    .nav-buttons, #navPadrao{
+
+    .nav-buttons,
+    #navPadrao {
         display: none;
         visibility: hidden;
     }
-    
+
     #navPequena {
         display: flex;
         flex-direction: row;
@@ -265,7 +321,7 @@ iframe{
         margin: auto;
     }
 
-    #btnSideBar{
+    #btnSideBar {
         background-color: var(--cor1);
         color: var(--cor3);
         visibility: visible;
@@ -301,17 +357,17 @@ iframe{
     }
 
 
-    .conteudo-servico{
+    .conteudo-servico {
         flex-wrap: wrap;
     }
-    
-    
+
+
 }
 
 /* Telas médias (tablets) */
 @media (min-width: 999px) and (max-width: 1299px) {
 
-    #navPequena{
+    #navPequena {
         display: none;
         visibility: hidden;
     }
@@ -329,19 +385,20 @@ iframe{
         padding: 1rem;
     }
 
-    .conteudo-servico{
+    .conteudo-servico {
         flex-wrap: wrap;
     }
-    .card-lista-solicitacao{
+
+    .card-lista-solicitacao {
         flex: 1 1 calc(50% - 1rem);
         max-width: calc(50% - 1rem);
     }
 }
 
 /* Telas grandes (desktops) */
-@media (min-width: 1200px){
-    
-    #navPequena{
+@media (min-width: 1200px) {
+
+    #navPequena {
         display: none;
         visibility: hidden;
     }
@@ -350,7 +407,7 @@ iframe{
         justify-content: space-around;
         padding: 0.5rem;
     }
-    
+
     .imagem-topo {
         height: 100vh;
     }

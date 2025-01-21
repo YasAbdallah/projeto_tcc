@@ -1,54 +1,41 @@
-const btnSalvar = document.querySelector('[type="submit"]');
-const senha1 = document.getElementById('novaSenha');
-const senha2 = document.getElementById('novaSenha2');
-const senhaAtual = document.getElementById('senhaAtual');
-
+// Função para alternar o estado do botão "Salvar"
 const toggleBtnSalvar = (enable) => {
-    if (enable) {
-        btnSalvar.classList.remove('btn-secondary');
-        btnSalvar.classList.add('btn-primary');
-        btnSalvar.removeAttribute('disabled');
-    } else {
-        btnSalvar.classList.remove('btn-primary');
-        btnSalvar.classList.add('btn-secondary');
-        btnSalvar.setAttribute('disabled', '');
-    }
-}
+    const btnSalvar = document.querySelector('[type="submit"]');
+    btnSalvar.classList.toggle('btn-primary', enable);
+    btnSalvar.classList.toggle('btn-secondary', !enable);
+    btnSalvar.disabled = !enable;
+};
 
-const setFieldStatus = (field, valid) => {
-    if (valid) {
-        field.setAttribute('class', 'form-control border-success');
-    } else {
-        field.setAttribute('class', 'form-control border-danger');
-    }
-}
+// Função para definir o estado visual de um campo
+const bordaStatus = (field, valid) => {
+    field.className = `form-control ${valid ? 'border-success' : 'border-danger'}`;
+};
 
-const handleCPFValidation = () => {
-    const isValid = validaCPF(cpf.value);
-    setFieldStatus(cpf, isValid);
-    toggleBtnSalvar(isValid);
-}
+// Função genérica para validar senha
+const validarCampoSenha = (field, relatedField = null) => {
+    const passwords = {
+        senha1: document.getElementById('novaSenha'),
+        senha2: document.getElementById('novaSenhaRedigitada'),
+        senhaAtual: document.getElementById('senhaAtual'),
+    };
 
-const handleSenhaValidation = (field, relatedField = null) => {
-    const isValid = validaSenha(field.value) && (!relatedField || field.value === relatedField.value);
-    setFieldStatus(field, isValid);
-    toggleBtnSalvar(isValid);
-}
+    // Valida o campo atual
+    const isValid = validarSenha(field.value) && (!relatedField || field.value === relatedField.value);
+    bordaStatus(field, isValid);
 
+    // Valida todos os campos de senha
+    const allValid = Object.entries(passwords).every(([key, input]) => {
+        if (!input) return true; // Ignora campos ausentes
+        if (key === 'senha2') return input.value === passwords.senha1?.value && validarSenha(input.value);
+        return validarSenha(input.value);
+    });
 
-if (senha1) {
-    senha1.addEventListener("input", () => handleSenhaValidation(senha1));
-}
+    // Atualiza o botão de salvar
+    toggleBtnSalvar(allValid);
+};
 
-if (senhaAtual) {
-    senhaAtual.addEventListener("input", () => handleSenhaValidation(senhaAtual));
-}
-
-if (senha2) {
-    senha2.addEventListener("input", () => handleSenhaValidation(senha2, senha1));
-}
-
-function validaSenha(senha) {
+// Função para validar senha usando regex
+const validarSenha = (senha) => {
     const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/;
     return regex.test(senha);
-}
+};

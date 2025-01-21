@@ -14,7 +14,7 @@ const Barbeiro = new Schema({
         type: [String],
         required: true
     },
-    disasDisponiveis: {
+    diasDisponiveis: {
         type: [String],
         required: true
     },
