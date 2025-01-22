@@ -10,6 +10,23 @@ const Barbeiro = new Schema({
         type: String,
         required: true
     },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    telefone: {
+        type: String,
+        required: false
+    },
+    endereco: {
+        type: String,
+        required: false
+    },
+    senha: {
+        type: String,
+        required: true
+    },
     servicos: {
         type: [String],
         required: true
@@ -26,6 +43,10 @@ const Barbeiro = new Schema({
             }
         ],
         required: true
+    },
+    tipo: {
+        type: Number,
+        default: 0 // Barbeiro
     },
     dataCriacaoRegistro: {
         type: Date,

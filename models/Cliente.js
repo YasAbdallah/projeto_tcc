@@ -27,6 +27,10 @@ const Cliente = new Schema({
         type: Date,
         default: Date.now
     },
+    tipo: {
+        type: Number,
+        default: 1 // Cliente
+    },
     ativo: {
         type: Boolean,
         default: true
