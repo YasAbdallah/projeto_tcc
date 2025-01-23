@@ -17,11 +17,11 @@ router.get('/', (req, res) => {
 router.post('/login', async (req, res, next) => {
     try {
         // Procurar o usuário na coleção de Clientes
-        let usuario = await Cliente.findOne({ email: req.body.email });
+        let usuario = await Cliente.findOne({ email: req.body.email }).select('nome email tipo');
 
         // Se não encontrar na coleção de Clientes, procurar na coleção de Barbeiros
         if (!usuario) {
-            usuario = await Barbeiro.findOne({ email: req.body.email });
+            usuario = await Barbeiro.findOne({ email: req.body.email }).select('nome email tipo');
         }
 
         // Se nenhum usuário for encontrado em ambas as coleções
@@ -32,6 +32,7 @@ router.post('/login', async (req, res, next) => {
         // Passar o controle para o Passport.js para autenticação
         passport.authenticate('local', (err, user, info) => {
             if (err) {
+                console.log(err)
                 return res.json({ sucesso: false, message: "Ocorreu um erro inesperado ao tentar logar." });
             }
 
@@ -44,7 +45,7 @@ router.post('/login', async (req, res, next) => {
                     return res.json({ sucesso: false, message: "Ocorreu um erro ao tentar logar. Por favor, tente novamente." });
                 }
 
-                return res.json({ sucesso: true, message: "Redirecionando." });
+                return res.json({ sucesso: true, message: "Redirecionando.", user });
             });
         })(req, res, next);
     } catch (error) {

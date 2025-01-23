@@ -22,16 +22,16 @@ const formulariologin = async () => {
                 })
                 if(response.ok){
                     const result = await response.json()
-                    console.log(response)
                     if(result.sucesso){
                         await popup(popupSucesso, result)
-                        window.location.href = "/"
+                        result.user.tipo == 1 ? window.location.href = "/painel/usuario" : window.location.href = "/painel/funcionario"
                     }else{
                         popup(popupErro, result)
                     }
                 }
             }catch(error){
-                popup(popupErro, {sucesso: false, message: "Ocorreu um erro inesperado."})
+                console.log(error)
+                popup(popupErro, {sucesso: false, message: "Ocorreu um erro inesperado. "})
             }    
         })
     }
