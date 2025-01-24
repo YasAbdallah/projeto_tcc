@@ -10,6 +10,8 @@ const passport = require('passport')
 require("./config/auth")(passport)
 const db = require("./config/db")
 const login = require('./routes/login/login')
+const painelUsuario = require('./routes/painel/usuario')
+const painelFuncionario = require('./routes/painel/funcionario')
 const { config } = require("process")
 const app = express()
 
@@ -76,6 +78,8 @@ app.get('/', (req, res) => {
 })
 
 app.use("/login", login)
+app.use("/painel/usuario", painelUsuario)
+app.use("/painel/funcionario", painelFuncionario)
 
 
 //app.use("/mensagem", mensagem)
