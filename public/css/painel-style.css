@@ -49,7 +49,7 @@ header h1 {
 main {
     grid-area: principal;
     position: relative;
-    top: 9rem;
+    top: 10rem;
 }
 
 .nav-topo {
@@ -59,11 +59,15 @@ main {
     justify-content: space-around;
     padding: 0.5rem;
     min-height: 150px;
-    margin-left: 250px;
+    margin-left: 200px;
 }
 
 .vertical-nav {
-    width: 250px; /* Largura da navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 200px; /* Largura da navbar */
     height: 100%;
     position: fixed; /* Fixa a posição */
     top: 0; /* Fixa no topo */
@@ -71,7 +75,45 @@ main {
     overflow-y: auto; /* Adiciona rolagem caso o conteúdo seja maior que a altura */
     background-color: var(--cor2); /* Cor de fundo */
     box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Adiciona uma sombra para dar profundidade */
-    z-index: 1000; /* Garante que fique sobre outros conteúdos */
+    z-index: 9999; /* Garante que fique sobre outros conteúdos */
+}
+
+.nav .flex-column{
+    width: 100%;
+}
+
+.vertical-nav .nav-item{
+    width: 100%;
+}
+
+.nav-item:last-child{
+    margin-top: auto;
+}
+
+.nav-link{
+    width: 100%;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--cor1);
+    display: flex;
+    align-items: center;
+}
+
+.nav-link i{
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.vertical-nav a{
+    justify-self: center;
+    margin: 15px;
+    color: var(--cor1);
+}
+
+.vertical-nav a:hover{
+    color: var(--cor3);
+    text-decoration: underline;
+    transition: color 0.3s;
 }
 
 .nav-topo a{
