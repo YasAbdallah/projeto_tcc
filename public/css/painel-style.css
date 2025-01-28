@@ -1,0 +1,431 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+    --cor1: #E7E5E2;
+    --cor2: #021130;
+    --cor3: #7A5604;
+    --cor3-1: #5f4302;
+    --cor4: #424B5F;
+    --cor5: #DFDDD9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "cabecalho" "principal" "rodape";
+    background-color: var(--cor5);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor2);
+}
+
+header {
+    grid-area: cabecalho;
+    text-align: center;
+    min-width: 650px;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--cor1);
+    margin: 1rem;
+}
+
+main {
+    grid-area: principal;
+    position: relative;
+    top: 9rem;
+}
+
+.nav-topo {
+    display: flex;
+    justify-content: center;
+    background-color: var(--cor2);
+    justify-content: space-around;
+    padding: 0.5rem;
+    min-height: 150px;
+    margin-left: 250px;
+}
+
+.vertical-nav {
+    width: 250px; /* Largura da navbar */
+    height: 100%;
+    position: fixed; /* Fixa a posição */
+    top: 0; /* Fixa no topo */
+    left: 0; /* Fixa na lateral esquerda */
+    overflow-y: auto; /* Adiciona rolagem caso o conteúdo seja maior que a altura */
+    background-color: var(--cor2); /* Cor de fundo */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Adiciona uma sombra para dar profundidade */
+    z-index: 1000; /* Garante que fique sobre outros conteúdos */
+}
+
+.nav-topo a{
+    margin: 0 1rem;
+    color: var(--cor1);
+    font-weight: 500;
+}
+
+.nav-topo a:hover {
+    color: var(--cor3);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.nav-topo .btn-login {
+    text-decoration: none;
+    border: 3px solid var(--cor1);
+    padding: 10px 15px;
+}
+
+.nav-topo .btn-login:hover {
+    border: none;
+    background-color: var(--cor3);
+    color: var(--cor1);
+    padding: 13px 18px;
+    transition: color 0.5s;
+}
+
+.imagem-topo {
+    position: static;
+    background-image: url("../img/topo-02.webp");
+    /* Substitua pelo caminho correto */
+    background-size: cover;
+    /* Preenche completamente */
+    background-repeat: no-repeat;
+    /* Evita repetição */
+    background-position: center;
+    /* Centraliza a imagem */
+    width: 100%;
+    /* Largura igual à largura da janela */
+    height: 100vh;
+    /* Altura igual à altura da janela */
+    margin: 0;
+    /* Remove margens */
+    padding: 0;
+    /* Remove preenchimentos */
+    display: flex;
+    /* Torna-se um contêiner flexível */
+    flex-direction: column;
+    /* Organiza os elementos verticalmente */
+    justify-content: center;
+    /* Centraliza os itens no eixo vertical */
+    align-items: center;
+    /* Centraliza os itens no eixo horizontal */
+    text-align: center;
+    /* Centraliza o texto */
+    overflow: hidden;
+    /* Evita overflow */
+}
+
+.imagem-topo h1 {
+    font-weight: 500;
+    color: var(--cor1);
+    margin-bottom: 1rem;
+}
+
+.imagem-topo h2 {
+    font-weight: 500;
+    color: var(--cor5);
+    margin-bottom: 1rem;
+}
+
+.imagem-topo a {
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: var(--cor3);
+    border-radius: 5px;
+}
+
+#servicos {
+    scroll-margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 2rem;
+    min-width: 650px;
+}
+
+#sobre {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2rem;
+    scroll-margin-top: 130px;
+    min-width: 650px;
+}
+
+#sobre h1 {
+    font-weight: 700;
+    color: var(--cor2);
+}
+
+.img-sobre {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+#contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    scroll-margin-top: 130px;
+    min-width: 650px;
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contato label {
+    font-weight: 400;
+    color: var(--cor2);
+}
+
+.btn-contato {
+    font-weight: 300;
+    color: white;
+    background-color: var(--cor2);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-contato:hover {
+    background-color: var(--cor3-1);
+}
+
+.footer {
+    grid-area: rodape;
+    background-color: var(--cor2);
+    color: var(--cor1);
+    position: relative;
+    top: 9rem;
+    padding: 1rem;
+    min-width: 650px;
+}
+
+.footer a {
+    color: var(--cor1);
+}
+
+.footer a:hover {
+    color: var(--cor3);
+    text-decoration: underline;
+}
+
+.conteudo-horario {
+    display: flex;
+    flex-direction: row;
+}
+
+.lista-rodape,
+.link-rodape {
+    list-style: none;
+}
+
+.backgroung-login {
+    position: static;
+    background-size: cover;
+    /* Preenche completamente */
+    background-repeat: no-repeat;
+    /* Evita repetição */
+    background-position: center;
+    /* Centraliza a imagem */
+    width: 100%;
+    /* Largura igual à largura da janela */
+    height: 100%;
+}
+
+legend {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+}
+
+iframe {
+    width: 100%;
+    height: 30%;
+    border-style: none;
+}
+
+.conteudo-servico {
+    display: flex;
+    justify-content: center;
+}
+
+.custom-toast {
+    position: absolute;
+    /* Fixa o elemento na viewport */
+    top: 10px;
+    /* Ajusta a distância do topo */
+    left: 50%;
+    /* Centraliza horizontalmente */
+    transform: translateX(-50%);
+    /* Corrige o deslocamento para centralização */
+    z-index: 9999 !important;
+    /* Garante que fique acima de outros elementos (maior que modais do Bootstrap) */
+    max-width: 90%;
+    /* Define um limite de largura para telas pequenas */
+    width: auto;
+    /* Ajusta o tamanho automaticamente ao conteúdo */
+    pointer-events: auto;
+    /* Permite interação com o elemento */
+}
+
+.custom-toast .toast-header {
+    background-color: #f8d7da;
+    /* Fundo claro para o cabeçalho */
+    color: #721c24;
+    /* Cor do texto de erro */
+    border-bottom: 1px solid #f5c6cb;
+    /* Linha divisória */
+}
+
+.custom-toast .toast-body {
+    background-color: #fff;
+    /* Fundo branco */
+}
+
+
+/* Responsividade */
+
+/* Telas pequenas (mobile) */
+@media (max-width: 998px) {
+
+    .nav-buttons,
+    #navPadrao {
+        display: none;
+        visibility: hidden;
+    }
+
+    #navPequena {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        align-self: start;
+        margin: auto;
+    }
+
+    #btnSideBar {
+        background-color: var(--cor1);
+        color: var(--cor3);
+        visibility: visible;
+        position: relative;
+        padding: 10px 15px;
+        margin: auto;
+    }
+
+
+    body {
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagem-topo {
+        height: 50vh;
+        padding: 1rem;
+        min-width: 650px;
+    }
+
+    .conteudo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagem-topo a {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+
+    .conteudo-servico {
+        flex-wrap: wrap;
+    }
+
+
+}
+
+/* Telas médias (tablets) */
+@media (min-width: 999px) and (max-width: 1299px) {
+
+    #navPequena {
+        display: none;
+        visibility: hidden;
+    }
+
+    body {
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .nav {
+        padding: 0.5rem;
+    }
+
+    .imagem-topo {
+        height: 75vh;
+        padding: 1rem;
+    }
+
+    .conteudo-servico {
+        flex-wrap: wrap;
+    }
+
+    .card-lista-solicitacao {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+}
+
+/* Telas grandes (desktops) */
+@media (min-width: 1200px) {
+
+    #navPequena {
+        display: none;
+        visibility: hidden;
+    }
+
+    .nav {
+        justify-content: space-around;
+        padding: 0.5rem;
+    }
+
+    .imagem-topo {
+        height: 100vh;
+    }
+
+    .imagem-topo a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+}

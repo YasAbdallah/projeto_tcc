@@ -6,6 +6,12 @@ const Cliente = mongoose.model('cliente')
 require('../../models/Barbeiro')
 const Barbeiro = mongoose.model('barbeiro')
 
+
+router.use((req, res, next) => {
+    res.locals.layout = 'painel'
+    next()
+})
+
 router.get('/', (req, res) => {
     res.render("painel/funcionario")
 })

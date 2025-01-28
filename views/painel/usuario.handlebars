@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Painel de Usuário</h1>
+    <form action="/agendar" method="POST">
+        <div class="form-group">
+            <label for="data">Escolha o dia:</label>
+            <input type="date" id="data" name="data" required>
+        </div>
+        <div class="form-group">
+            <label for="horario">Escolha o horário:</label>
+            <input type="time" id="horario" name="horario" required>
+        </div>
+        <div class="form-group">
+            <label for="barbeiro">Escolha o barbeiro:</label>
+            <select id="barbeiro" name="barbeiro" required>
+                <option value="barbeiro1">Barbeiro 1</option>
+                <option value="barbeiro2">Barbeiro 2</option>
+                <option value="barbeiro3">Barbeiro 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="servico">Escolha o tipo de serviço:</label>
+            <select id="servico" name="servico" required>
+                <option value="corte">Corte de Cabelo</option>
+                <option value="barba">Barba</option>
+                <option value="combo">Combo (Corte + Barba)</option>
+            </select>
+        </div>
+        <button type="submit">Agendar</button>
+    </form>
+</div>
