@@ -1,0 +1,55 @@
+<img src="/img/topo.webp" alt="imagem de background" class="backgroung-login">
+<section class="d-flex flex-column">
+    <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="card w-100">
+            <div class="card-body">
+                <form id="formCriarConta" name="formCriarConta">
+                    <legend id="formCriarContaTitle" class="card-title text-center">Criar Conta</legend>
+                    <fieldset aria-labelledby="formCriarContaTitle">
+                        <section class="m-3">
+                            <label class="form-label" for="nome"><i class="text-danger">*</i> Nome completo:</label>
+                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome aqui" aria-required="true" aria-describedby="name" autocomplete="name" required>
+                            <small id="alertaNome" class="text-muted"></small>
+                        </section>
+                        <section class="m-3">
+                            <label class="form-label" for="email"><i class="text-danger">*</i> E-mail:</label>
+                            <input type="text" name="email" id="email" class="form-control" placeholder="seu@email.aqui" aria-required="true" aria-describedby="emailFormat" autocomplete="email" required>
+                            <small id="alertaEmail" class="text-muted">Digite no formato exemplo@email.com</small>
+                        </section>
+                        <section class="m-3">
+                            <label class="form-label" for="telefone"><i class="text-danger">*</i> Telefone:</label>
+                            <input type="tel" name="telefone" id="telefone" class="form-control" placeholder="(00) 0 0000-0000" maxlength="15" aria-required="true" aria-describedby="telefoneFormat" autocomplete="telefone" required>
+                            <small id="alertaTelefone" class="text-muted"></small>
+
+                        </section>
+                        <section class="m-3">
+                            <label class="form-label" for="senha"><i class="text-danger">*</i> Senha:</label>
+                            <input type="password" name="senha" id="senha" class="form-control" placeholder="*************"
+                                aria-required="true" autocomplete="current-password" minlength="8" required>
+                            <small id="alertaSenha" class="text-muted">A senha deve ter no minímo 8 caracteres.</small>
+
+                        </section>
+                        <section class="m-3">
+                            <label class="form-label" for="senha"><i class="text-danger">*</i> Confirmar Senha:</label>
+                            <input type="password" name="confirmarSenha" id="confirmarSenha" class="form-control" placeholder="*************"
+                                aria-required="true" autocomplete="current-password" minlength="8" required>
+                            <small id="alertaConfirmarSenha"></small>
+
+                        </section>
+                    
+                        <section class="d-grid gap-2">
+                            <button class="btn btn-lg btn-primary m-3" id="buttonCriarConta"
+                                aria-label="Confirmar log-in">Criar conta</button>
+                        </section>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script type="module" src="/js/funcoes.js"></script>
+<script type="module" src="/js/criarConta/validacao.js"></script>
+<script type="module" src="/js/criarConta/enviarFormulario.js"></script>
+<script src="/js/login/util.js"></script>

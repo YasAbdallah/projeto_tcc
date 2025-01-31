@@ -15,7 +15,6 @@ export function popup(elemento, objeto){
 
 export function formatarData(data){
     const formatarData = new Date(data)
-
     return formatarData.toLocaleString()
 }
 
@@ -29,4 +28,16 @@ export function criarTag(tag, atributos={}, texto = ''){
 export function criarDiv(){
     const divRow = criarTag('div', {class:"row mb-3"})
     return divRow
+}
+
+export function validarEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return regex.test(email)
+}
+
+export function validarTelefone(telefone){
+    telefone = telefone.replace(/\D/g,'')
+    telefone = telefone.replace(/(\d{2})(\d)/,"($1) $2")
+    telefone = telefone.replace(/(\d)(\d{4})$/,"$1-$2")
+    return telefone
 }

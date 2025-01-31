@@ -50,5 +50,9 @@ module.exports = {
         const anoAtual = new Date().getFullYear();
         const codigoBase36 = Math.random().toString(36).substring(2, 8).toUpperCase(); // Gera uma string Base36 de 6 caracteres
         return `RQ${anoAtual}${codigoBase36}`;
+    },
+    validarEmail: (email) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email)
     }
 }
