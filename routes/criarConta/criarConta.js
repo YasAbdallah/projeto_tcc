@@ -11,13 +11,14 @@ router.get("/", async (req, res) => {
 })
 
 router.post("/criarConta", async (req, res) => {
-    const {nome, email, telefone, senha} = req.body
+    const {nome, email, telefone, senha, confirmarSenha} = req.body
 
     const validacao = [
         {campo: nome, mensagem: "O campo NOME é inválido."},
         {campo: email, mensagem: "O campo SOBRENOME é inválido."},
         {campo: telefone, mensagem: "O campo TELEFONE é inválido."},
-        {campo: senha, mensagem: "SENHA inválida."}
+        {campo: senha, mensagem: "SENHA inválida."},
+        {campo: confirmarSenha, mensagem: "SENHA inválida."}
     ]
 
     validacao.forEach((campo, mensagem) => {
@@ -27,15 +28,22 @@ router.post("/criarConta", async (req, res) => {
             return
         }
     })
+
+    if (senha !== confirmarSenha) {
+        res.json({sucesso: false, message: "As senhas não coincidem."})
+        return
+    }
     
     try{
+
         const salt = await bcrypt.genSalt(10)
-        const hash = await bcrypt.hash(novaSenha, salt)
+        const hash = await bcrypt.hash(senha, salt)
         const novoUsuario = { nome: nome, email: email, telefone: telefone, senha: hash}
         await new Cliente(novoUsuario).save()
         res.json({sucesso: true, message: "Conta criada com sucesso."})
         return
     }catch(error){
+        console.log(error)
         res.json({sucesso: false, message: "Ocorreu um erro interno ao tentar criar a conta. Tente novamente mais tarde."})
         return
     }

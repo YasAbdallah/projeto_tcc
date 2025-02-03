@@ -10,11 +10,13 @@ const passport = require('passport')
 require("./config/auth")(passport)
 const db = require("./config/db")
 const login = require('./routes/login/login')
+const esquecerSenha = require('./routes/login/esquecerSenha')
 const criarConta = require('./routes/criarConta/criarConta')
 const painelUsuario = require('./routes/painel/usuario')
 const painelFuncionario = require('./routes/painel/funcionario')
 const { config } = require("process")
 const app = express()
+require("dotenv").config()
 
 //Configurações
  
@@ -26,7 +28,7 @@ app.use(bodyparse.json())
 app.use(bodyparse.urlencoded({extended:false}))
 //Sessão
 app.use(session({
-    secret: 'projetoTCC-barbearia',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -79,6 +81,7 @@ app.get('/', (req, res) => {
 })
 
 app.use("/login", login)
+app.use("/login/esquecerSenha", esquecerSenha)
 app.use("/criarConta", criarConta)
 app.use("/painel/usuario", painelUsuario)
 app.use("/painel/funcionario", painelFuncionario)
@@ -90,7 +93,7 @@ app.get('*', (req, res) => {
 })
 
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || process.env.NODE_PORT
 app.listen(PORT, () => {
     console.log("Servidor Rodando.")
 })

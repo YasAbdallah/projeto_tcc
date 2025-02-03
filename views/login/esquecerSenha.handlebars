@@ -1,56 +1,34 @@
-<div class="d-flex justify-content-center m-3">
-    <div class="col-4 card login">
-        <div class="card-body">
-            <form id="formEsqueciSenha" action="/esquecerSenha" onsubmit="return validarSenhas();">
-                <fieldset aria-labelledby="formEsqueciSenhaTitle">
-                    <h1 id="formEsqueciSenhaTitle" class="card-title text-center">Esqueci minha senha</h1>
-                    <section class="m-3">
-                        <label class="form-label" for="cpf">CPF:</label>
-                        <input type="text"
-                               class="form-control mb-3"
-                               name="cpf"
-                               id="cpf"
-                               oninput="mascaraCPF(this), validarCPF(this)"
-                               maxlength="14"
-                               placeholder="000.000.000-00"
-                               aria-required="true"
-                               aria-describedby="cpfFormat"
-                               required>
-                        <small id="cpfFormat" class="text-muted">Digite no formato 000.000.000-00</small>
-                    </section>
-                    <section class="m-3">
-                        <label class="form-label" for="novaSenha">Nova senha:</label>
-                        <input type="password"
-                               autocomplete="new-password"
-                               name="novaSenha"
-                               id="novaSenha"
-                               class="form-control mb-3"
-                               placeholder="Nova senha"
-                               minlength="8"
-                               aria-required="true"
-                               required>
-                    </section>
-                    <section class="m-3">
-                        <label class="form-label" for="novaSenha2">Repita a nova senha:</label>
-                        <input type="password"
-                               autocomplete="new-password"
-                               name="novaSenha2"
-                               id="novaSenha2"
-                               class="form-control mb-3"
-                               placeholder="Repita a nova senha"
-                               minlength="8"
-                               aria-required="true"
-                               required>
-                    </section>
-                    <section class="d-grid gap-2">
-                        <button type="submit" class="btn btn-lg btn-primary m-3" aria-label="Confirmar troca de senha">Trocar senha</button>
-                    </section>
-                </fieldset>
-            </form>
+<img src="/img/topo.webp" alt="imagem de background" class="backgroung-login">
+<section class="d-flex flex-column">
+    <section class="position-absolute top-50 start-50 translate-middle">
+        <div class="card">
+            <div class="card-body">
+                <form id="formEsqueciSenha" action="/esquecerSenha" onsubmit="return validarSenhas();">
+                    <legend id="formEsqueciSenhaTitle" class="card-title text-center">Esqueceu sua senha?</legend>
+                    <fieldset aria-labelledby="formEsqueciSenhaTitle">
+                        <section class="m-3">
+                            <label class="form-label" for="email">E-mail</label>
+                            <input type="text"
+                                   class="form-control mb-3"
+                                   name="email"
+                                   id="email"
+                                   placeholder="exemplo@email.com"
+                                   aria-required="true"
+                                   aria-describedby="emailFormat"
+                                   autocomplete="email"
+                                   required>
+                            <small id="emailFormat" class="text-muted">Digite no formato exemplo@email.com</small>
+                        </section>
+                        <section class="d-grid gap-2">
+                            <button type="submit" class="btn btn-lg btn-primary m-3" aria-label="Confirmar troca de senha" id="btnSolicitar">Solicitar troca de senha</button>
+                        </section>
+                    </fieldset>
+                </form>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
+</section>
 
+<script type="module" src="/js/login/validacao.js"></script>
 <script type="module" src="/js/login/esquecerSenha.js"></script>
-<script type="module" src="/js/funcoes.js"></script>
 <script src="/js/login/util.js"></script>

@@ -23,7 +23,7 @@ inputEmail.addEventListener('focusout', () => {
 inputConfirmarSenha.addEventListener('focusout', () => {
     if (inputSenha.value !== inputConfirmarSenha.value) {
         alertaConfirmarSenha.textContent = "As senhas não coincidem"
-        inputConfirmarSenha.style.border = '1px solid green'
+        inputConfirmarSenha.style.border = '1px solid red'
         alertaConfirmarSenha.style.color = 'red'
         buttonCriarConta.disabled = true
     }else{

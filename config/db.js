@@ -1,5 +1,7 @@
+require('dotenv').config()
+
 if(process.env.NODE_ENV == 'production'){
     //module.exports = {mongoURI: ''}
 }else{
-    module.exports = {mongoURI: 'mongodb://127.0.0.1:27017/projetoTCC-barbearia'}
+    module.exports = {mongoURI: `${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DB}`}
 }
