@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require("mongoose")
-const nodemailer = require('nodemailer')
 require('../../models/Cliente')
 const Cliente = mongoose.model('cliente')
 const bcrypt = require('bcryptjs')

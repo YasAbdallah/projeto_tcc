@@ -1,3 +1,6 @@
+const nodemailer = require('nodemailer')
+const jwt = require('jsonwebtoken')
+
 module.exports = {
     formatarData: (data) => {
         const dataFormatada = data.split('-')
