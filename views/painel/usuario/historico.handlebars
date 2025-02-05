@@ -1,0 +1,29 @@
+<section class="container d-flex flex-column align-items-center">
+    <section class="historico">
+        <h1>Histórico de Agendamentos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Serviço</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each agendamentos}}
+                <tr>
+                    <td>{{this.data}}</td>
+                    <td>{{this.hora}}</td>
+                    <td>{{this.servico}}</td>
+                    <td>{{this.status}}</td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="4">Você não tem nenhum histórico.</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>
+</section>

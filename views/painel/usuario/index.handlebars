@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="agendamentos">
+        <h3>Últimos Agendamentos</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Serviço</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each agendamento}}
+            <tr>
+                <td>{{this.data}}</td>
+                <td>{{this.horario}}</td>
+                <td>{{this.servico}}</td>
+            </tr>
+            {{else}}
+            <tr>
+                <td colspan="3">Nenhum agendamento encontrado.</td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

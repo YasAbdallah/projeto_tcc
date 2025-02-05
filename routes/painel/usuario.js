@@ -7,7 +7,6 @@ require('../../models/Barbeiro')
 const Barbeiro = mongoose.model('barbeiro')
 
 
-
 router.use((req, res, next) => {
     res.locals.layout = 'painel'
     next()
@@ -15,6 +14,13 @@ router.use((req, res, next) => {
 
 router.get('/', (req, res) => {
     res.render('painel/usuario')
+})
+
+router.get('/agenda', (req, res) => {
+    res.render('painel/usuario/agendar')
+})
+router.get('/historico', (req, res) => {
+    res.render('painel/usuario/historico')
 })
 
 module.exports = router

@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-    --cor1: #E7E5E2;
+    --cor1: #e7e5e2;
     --cor2: #021130;
-    --cor3: #7A5604;
+    --cor3: #7a5604;
     --cor3-1: #5f4302;
-    --cor4: #424B5F;
-    --cor5: #DFDDD9;
+    --cor4: #424b5f;
+    --cor5: #dfddd9;
 }
 
 * {
@@ -67,30 +67,38 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    width: 200px; /* Largura da navbar */
+    width: 200px;
+    /* Largura da navbar */
     height: 100%;
-    position: fixed; /* Fixa a posição */
-    top: 0; /* Fixa no topo */
-    left: 0; /* Fixa na lateral esquerda */
-    overflow-y: auto; /* Adiciona rolagem caso o conteúdo seja maior que a altura */
-    background-color: var(--cor2); /* Cor de fundo */
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Adiciona uma sombra para dar profundidade */
-    z-index: 9999; /* Garante que fique sobre outros conteúdos */
+    position: fixed;
+    /* Fixa a posição */
+    top: 0;
+    /* Fixa no topo */
+    left: 0;
+    /* Fixa na lateral esquerda */
+    overflow-y: auto;
+    /* Adiciona rolagem caso o conteúdo seja maior que a altura */
+    background-color: var(--cor2);
+    /* Cor de fundo */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    /* Adiciona uma sombra para dar profundidade */
+    z-index: 9999;
+    /* Garante que fique sobre outros conteúdos */
+
+    .vertical-nav .nav-item {
+        width: 100%;
+    }
 }
 
-.nav .flex-column{
+.nav .flex-column {
     width: 100%;
 }
 
-.vertical-nav .nav-item{
-    width: 100%;
-}
-
-.nav-item:last-child{
+.nav-item:last-child {
     margin-top: auto;
 }
 
-.nav-link{
+.nav-link {
     width: 100%;
     padding: 10px 15px;
     text-decoration: none;
@@ -99,24 +107,24 @@ main {
     align-items: center;
 }
 
-.nav-link i{
+.nav-link i {
     margin-right: 10px;
     font-size: 1.2em;
 }
 
-.vertical-nav a{
+.vertical-nav a {
     justify-self: center;
     margin: 15px;
     color: var(--cor1);
 }
 
-.vertical-nav a:hover{
+.vertical-nav a:hover {
     color: var(--cor3);
     text-decoration: underline;
     transition: color 0.3s;
 }
 
-.nav-topo a{
+.nav-topo a {
     margin: 0 1rem;
     color: var(--cor1);
     font-weight: 500;
@@ -142,56 +150,149 @@ main {
     transition: color 0.5s;
 }
 
-.imagem-topo {
-    position: static;
-    background-image: url("../img/topo-02.webp");
-    /* Substitua pelo caminho correto */
-    background-size: cover;
-    /* Preenche completamente */
-    background-repeat: no-repeat;
-    /* Evita repetição */
-    background-position: center;
-    /* Centraliza a imagem */
-    width: 100%;
-    /* Largura igual à largura da janela */
-    height: 100vh;
-    /* Altura igual à altura da janela */
-    margin: 0;
-    /* Remove margens */
-    padding: 0;
-    /* Remove preenchimentos */
-    display: flex;
-    /* Torna-se um contêiner flexível */
-    flex-direction: column;
-    /* Organiza os elementos verticalmente */
-    justify-content: center;
-    /* Centraliza os itens no eixo vertical */
-    align-items: center;
-    /* Centraliza os itens no eixo horizontal */
-    text-align: center;
-    /* Centraliza o texto */
-    overflow: hidden;
-    /* Evita overflow */
+.agendar {
+    align-items: start;
+    gap: 10px;
+    margin: auto;
+    
+    .input-container {
+        position: relative;
+        width: 300px;
+    }
+    
+    input[type="date"],
+    input[type="time"],
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+    
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="time"]::-webkit-calendar-picker-indicator,
+    select::-webkit-calendar-picker-indicator {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+    
+    button {
+        width: 300px;
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: var(--cor2);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 }
 
-.imagem-topo h1 {
-    font-weight: 500;
-    color: var(--cor1);
-    margin-bottom: 1rem;
+
+
+.agendamentos {
+    align-items: end;
+    gap: 10px;
+    margin-left: 35px;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: left;
+        background-color: var(--cor1);
+    }
+    
+    /* Cabeçalho da tabela */
+    thead {
+        background-color: var(--cor2);
+        color: var(--cor1);
+    }
+    
+    thead th {
+        padding: 12px 15px;
+    }
+    
+    /* Corpo da tabela */
+    tbody {
+    
+        /* Linhas pares */
+        tr:nth-child(even) {
+            background-color: var(--cor5);
+        }
+    
+        /* Linha padrão */
+        tr {
+            border-bottom: 1px solid var(--cor4);
+        }
+    
+        /* Última linha */
+        tr:last-of-type {
+            border-bottom: 2px solid var(--cor2);
+        }
+    
+        /* Células da tabela */
+        td {
+            padding: 12px 15px;
+            color: var(--cor4);
+        }
+    }
 }
 
-.imagem-topo h2 {
-    font-weight: 500;
-    color: var(--cor5);
-    margin-bottom: 1rem;
-}
 
-.imagem-topo a {
-    color: white;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background-color: var(--cor3);
-    border-radius: 5px;
+
+
+.historico {
+    gap: 10px;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: left;
+        background-color: var(--cor1);
+    }
+
+    thead {
+        background-color: var(--cor2);
+        color: var(--cor1);
+    }
+
+    thead th {
+        padding: 12px 15px;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: var(--cor5);
+    }
+
+    tbody tr {
+        border-bottom: 1px solid var(--cor4);
+    }
+
+    tbody td {
+        padding: 12px 15px;
+        color: var(--cor4);
+    }
+
+    tbody tr:last-of-type {
+        border-bottom: 2px solid var(--cor2);
+    }
+
+    tbody tr td[colspan="4"] {
+        text-align: center;
+        color: var(--cor3);
+        font-weight: bold;
+    }
 }
 
 #servicos {
@@ -352,39 +453,13 @@ iframe {
 
 .custom-toast .toast-body {
     background-color: #fff;
-    /* Fundo branco */
 }
-
 
 /* Responsividade */
 
 /* Telas pequenas (mobile) */
 @media (max-width: 998px) {
 
-    .nav-buttons,
-    #navPadrao {
-        display: none;
-        visibility: hidden;
-    }
-
-    #navPequena {
-        display: flex;
-        flex-direction: row;
-        position: relative;
-        align-self: start;
-        margin: auto;
-    }
-
-    #btnSideBar {
-        background-color: var(--cor1);
-        color: var(--cor3);
-        visibility: visible;
-        position: relative;
-        padding: 10px 15px;
-        margin: auto;
-    }
-
-
     body {
         grid-template-rows: auto 1fr auto;
     }
@@ -394,38 +469,24 @@ iframe {
         align-items: center;
     }
 
-    .imagem-topo {
-        height: 50vh;
-        padding: 1rem;
-        min-width: 650px;
+    .agendamentos {
+        margin-left: 10px;
+        gap: 5px;
     }
 
-    .conteudo {
-        flex-direction: column;
-        align-items: center;
+    .agendamentos table {
+        font-size: 16px;
     }
 
-    .imagem-topo a {
-        font-size: 1rem;
-        padding: 0.8rem 1.5rem;
+    .agendamentos thead th,
+    .agendamentos tbody td {
+        padding: 10px;
     }
-
-
-    .conteudo-servico {
-        flex-wrap: wrap;
-    }
-
-
 }
 
 /* Telas médias (tablets) */
 @media (min-width: 999px) and (max-width: 1299px) {
 
-    #navPequena {
-        display: none;
-        visibility: hidden;
-    }
-
     body {
         grid-template-rows: auto 1fr auto;
     }
@@ -433,41 +494,12 @@ iframe {
     .nav {
         padding: 0.5rem;
     }
-
-    .imagem-topo {
-        height: 75vh;
-        padding: 1rem;
-    }
-
-    .conteudo-servico {
-        flex-wrap: wrap;
-    }
-
-    .card-lista-solicitacao {
-        flex: 1 1 calc(50% - 1rem);
-        max-width: calc(50% - 1rem);
-    }
 }
 
 /* Telas grandes (desktops) */
 @media (min-width: 1200px) {
-
-    #navPequena {
-        display: none;
-        visibility: hidden;
-    }
-
     .nav {
         justify-content: space-around;
         padding: 0.5rem;
-    }
-
-    .imagem-topo {
-        height: 100vh;
-    }
-
-    .imagem-topo a {
-        font-size: 1.2rem;
-        padding: 1rem 2rem;
     }
 }
