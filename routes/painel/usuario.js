@@ -19,8 +19,15 @@ router.get('/', (req, res) => {
 router.get('/agenda', (req, res) => {
     res.render('painel/usuario/agendar')
 })
+
 router.get('/historico', (req, res) => {
     res.render('painel/usuario/historico')
 })
+
+router.get('/perfil', (req, res) => {
+    res.render('painel/usuario/perfil')
+})
+
+
 
 module.exports = router

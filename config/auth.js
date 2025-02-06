@@ -41,7 +41,7 @@ module.exports = function (passport) {
     }));
 
     passport.serializeUser((user, done) => {
-        done(null, { id: user._id, tipo: user.tipoUsuario }); // Armazena o tipo de usuário
+        done(null, { id: user._id, tipo: user.tipoUsuario }); // Armazena o ID do usuário e o tipo de usuário na sessão
     });
 
     passport.deserializeUser((user, done) => {

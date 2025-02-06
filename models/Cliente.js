@@ -23,6 +23,14 @@ const Cliente = new Schema({
         type: String,
         required: true
     },
+    dataNacimento: {
+        type: Date,
+        required: false
+    },
+    genero:{
+        type: String,
+        required: false
+    },
     dataCriacao: {
         type: Date,
         default: Date.now
