@@ -17,7 +17,12 @@ router.get('/', (req, res) => {
 })
 
 router.get('/agenda', (req, res) => {
-    res.render('painel/usuario/agendar')
+    const barbeiros = Barbeiro.find().then((barbeiros) => {
+        res.render('painel/usuario/agendar', {barbeiros: barbeiros})
+    }).catch((err) => { 
+        req.flash('error_msg', 'Houve um erro ao listar os barbeiros')
+        res.redirect('/painel/usuario')
+    })
 })
 
 router.get('/historico', (req, res) => {

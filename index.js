@@ -60,7 +60,8 @@ app.engine('handlebars', handlebars.engine({
         allowProtoPropertiesByDefault: true,
         allowProtoMethodsByDefault: true,
     },
-}))
+})
+)
 
 app.set('view engine', 'handlebars')
 
