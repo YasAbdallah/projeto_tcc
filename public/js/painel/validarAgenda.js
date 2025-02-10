@@ -9,6 +9,7 @@ const alertaData = document.getElementById('alertaData')
 window.onload = async () => {
     await selectBarbeiro();
     await validarDia();
+    await validarHorario();
 }
 
 
@@ -19,13 +20,12 @@ const selectBarbeiro = async () => {
     
         // Atualiza os serviços
         const servicos = selectedOption.getAttribute('data-servicos').split(',');
-        const servicoSelect = document.getElementById('servico');
-        servicoSelect.innerHTML = '<option value="" disabled selected>Selecione o serviço desejado.</option>';
+        selectionServico.innerHTML = '<option value="" disabled selected>Selecione o serviço desejado.</option>';
         servicos.forEach(function (servico) {
             const option = document.createElement('option');
             option.value = servico.trim();
             option.textContent = servico.trim();
-            servicoSelect.appendChild(option);
+            selectionServico.appendChild(option);
         });
         const diasDisponiveis = selectedOption.getAttribute('data-dias').split(',');
         const dias = diasDaSemana(diasDisponiveis);
@@ -54,14 +54,17 @@ const diasDaSemana = (dias) => {
     return dias.map(dia => diasDaSemana[dia]);
 }
 
-/*document.getElementById('horario').addEventListener('change', function() {
-    const selectedTime = this.value;
 
-    const hours = parseInt(selectedTime.split(':')[0], 10);
+const validarHorario = async () => {
+    selectionHorario.addEventListener('change', function() {
+        const tempoSelecionado = this.value;
     
-    // Verifica se o horário está entre 9h e 18h
-    if (hours < 9 || hours >= 18) {
-        alert('Os barbeiros só trabalham entre 9h e 18h. Por favor, escolha um horário dentro desse intervalo.');
-        this.value = '';
-    }
-});*/
+        const horas = parseInt(tempoSelecionado.split(':')[0], 10);
+        
+        // Verifica se o horário está entre 9h e 18h
+        if (horas < 9 || horas >= 18) {
+            popup(popupErro, {sucesso: false, message: 'Os barbeiros só trabalham entre 9h às 13h e 14h às 18h. Por favor, escolha um horário dentro desse intervalo.'});
+            this.value = '';
+        }
+    });
+}
