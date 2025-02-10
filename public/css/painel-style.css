@@ -65,19 +65,19 @@ main {
         color: var(--cor1);
         font-weight: 500;
     }
-    
+
     a:hover {
         color: var(--cor3);
         text-decoration: underline;
         transition: color 0.3s;
     }
-    
+
     .btn-login {
         text-decoration: none;
         border: 3px solid var(--cor1);
         padding: 10px 15px;
     }
-    
+
     .btn-login:hover {
         border: none;
         background-color: var(--cor3);
@@ -119,13 +119,13 @@ main {
         margin: 15px;
         color: var(--cor1);
     }
-    
+
     a:hover {
         color: var(--cor3);
         text-decoration: underline;
         transition: color 0.3s;
     }
-    
+
 }
 
 .nav .flex-column {
@@ -206,6 +206,7 @@ main {
     align-items: end;
     gap: 10px;
     margin-left: 35px;
+    width: 100%;
 
     & table {
         width: 100%;
@@ -214,40 +215,39 @@ main {
         font-size: 18px;
         text-align: left;
         background-color: var(--cor1);
-    }
 
-    /* Cabeçalho da tabela */
-    & thead {
-        background-color: var(--cor2);
-        color: var(--cor1);
-    }
-
-    & thead th {
-        padding: 12px 15px;
-    }
-
-    /* Corpo da tabela */
-    & tbody {
-
-        /* Linhas pares */
-        & tr:nth-child(even) {
-            background-color: var(--cor5);
+        & thead {
+            background-color: var(--cor2);
+            color: var(--cor1);
         }
 
-        /* Linha padrão */
-        & tr {
-            border-bottom: 1px solid var(--cor4);
-        }
-
-        /* Última linha */
-        & tr:last-of-type {
-            border-bottom: 2px solid var(--cor2);
-        }
-
-        /* Células da tabela */
-        & td {
+        & thead th {
             padding: 12px 15px;
-            color: var(--cor4);
+        }
+
+        /* Corpo da tabela */
+        & tbody {
+
+            /* Linhas pares */
+            & tr:nth-child(even) {
+                background-color: var(--cor5);
+            }
+
+            /* Linha padrão */
+            & tr {
+                border-bottom: 1px solid var(--cor4);
+            }
+
+            /* Última linha */
+            & tr:last-of-type {
+                border-bottom: 2px solid var(--cor2);
+            }
+
+            /* Células da tabela */
+            & td {
+                padding: 12px 15px;
+                color: var(--cor4);
+            }
         }
     }
 }
@@ -358,6 +358,35 @@ main {
     & .btn-primary:hover {
         background-color: var(--cor3);
     }
+
+    & .img-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    
+        & .img-perfil {
+            display: block;
+            width: 150px;
+            /* Ajuste o tamanho conforme necessário */
+            height: 150px;
+            /* Ajuste o tamanho conforme necessário */
+            border-radius: 50%;
+            border: solid 2px var(--cor2);
+            background-color: var(--cor4);
+        }
+
+        & .input-imagem {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+    }
 }
 
 
@@ -412,7 +441,7 @@ main {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     & label {
         font-weight: 400;
         color: var(--cor2);
@@ -425,7 +454,7 @@ main {
         padding: 10px 20px;
         border-radius: 5px;
     }
-    
+
     & .btn-contato:hover {
         background-color: var(--cor3-1);
     }
@@ -444,7 +473,7 @@ main {
     & a {
         color: var(--cor1);
     }
-    
+
     & a:hover {
         color: var(--cor3);
         text-decoration: underline;
@@ -491,7 +520,7 @@ iframe {
     justify-content: center;
 }
 
-.toast{
+.toast {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -527,11 +556,12 @@ iframe {
         border-bottom: 1px solid #f5c6cb;
         /* Linha divisória */
     }
-    
+
     & .toast-body {
         background-color: #fff;
     }
 }
+
 /* Responsividade */
 
 /* Telas pequenas (mobile) */
@@ -547,17 +577,19 @@ iframe {
     }
 
     .agendamentos {
+        width: 100%;
         margin-left: 10px;
         gap: 5px;
-    }
 
-    .agendamentos table {
-        font-size: 16px;
-    }
+        & table {
+            font-size: 16px;
+            width: 100%;
 
-    .agendamentos thead th,
-    .agendamentos tbody td {
-        padding: 10px;
+            & thead th,
+            tbody td {
+                padding: 10px;
+            }
+        }
     }
 }
 

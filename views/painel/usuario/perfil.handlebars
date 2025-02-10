@@ -4,6 +4,12 @@
             <legend id="formDadosContaTitle" class="card-title text-center">Dados da conta</legend>
             <fieldset aria-labelledby="formDadosContaTitle">
                 <section class="m-3">
+                    <div class="img-container">
+                        <img src="" alt="Imagem de perfil" id="imagemPerfil" class="img-perfil">
+                        <input type="file" id="inputImagemPerfil" class="input-imagem" accept="image/*">
+                    </div>
+                </section>
+                <section class="m-3">
                     <label class="form-label" for="nome"><i class="text-danger">*</i> Nome completo:</label>
                     <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome aqui"
                         aria-required="true" aria-describedby="name" autocomplete="name" value="{{cliente.nome}}"
