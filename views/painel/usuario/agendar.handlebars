@@ -22,10 +22,11 @@
                 </section>
             </div>
             <div class="form-group">
-                <label for="data">Escolha o dia:</label>
+                <label for="data">Escolha o dia: </label>
                 <section class="input-container">
                     <input type="date" id="data" name="data" required>
                 </section>
+                <small id="alertaData"></small>
             </div>
             <div class="form-group">
                 <label for="horario">Escolha o horário:</label>
@@ -65,56 +66,4 @@
     </section>
 </section>
 
-<script>
-    document.getElementById('barbeiro').addEventListener('change', function() {
-        const selectedOption = this.options[this.selectedIndex];
-        
-        // Atualiza os serviços
-        const servicos = selectedOption.getAttribute('data-servicos').split(',');
-        const servicoSelect = document.getElementById('servico');
-        servicoSelect.innerHTML = '<option value="" disabled selected>Selecione o serviço desejado.</option>';
-        servicos.forEach(function(servico) {
-            const option = document.createElement('option');
-            option.value = servico.trim();
-            option.textContent = servico.trim();
-            servicoSelect.appendChild(option);
-        });
-
-        // Atualiza os dias disponíveis
-        const diasDisponiveis = selectedOption.getAttribute('data-dias').split(',');
-        const dataInput = document.getElementById('data');
-        dataInput.setAttribute('min', diasDisponiveis[0]);
-        dataInput.setAttribute('max', diasDisponiveis[diasDisponiveis.length - 1]);
-
-        // Atualiza os horários disponíveis
-        const horasDisponiveis = selectedOption.getAttribute('data-horas').split(',');
-        const horarioInput = document.getElementById('horario');
-        horarioInput.setAttribute('min', horasDisponiveis[0]);
-        horarioInput.setAttribute('max', horasDisponiveis[horasDisponiveis.length - 1]);
-    });
-
-    document.getElementById('data').addEventListener('change', function() {
-        const selectedOption = document.getElementById('barbeiro').options[this.selectedIndex];
-
-        const dataSelecionada = new Date(document.getElementById("data").value);
-        const diaSelecionado = dataSelecionada.getUTCDate();
-        const diasDisponiveis = selectedOption.getAttribute('data-dias').split(',');
-        console.log(diasDisponiveis)
-        if (!diasDisponiveis.includes(diaSelecionado)) {
-            alert('O barbeiro está de folga esse dia. Por favor, escolha outro dia.');
-            this.value = '';
-        }
-    });
-
-    document.getElementById('horario').addEventListener('change', function() {
-        const selectedTime = this.value;
-
-        const hours = parseInt(selectedTime.split(':')[0], 10);
-        
-        // Verifica se o horário está entre 9h e 18h
-        if (hours < 9 || hours >= 18) {
-            alert('Os barbeiros só trabalham entre 9h e 18h. Por favor, escolha um horário dentro desse intervalo.');
-            this.value = '';
-        }
-    });
-</script>
+<script type="module" src="/js/painel/validarAgenda.js"></script>
