@@ -44,7 +44,7 @@ router.post('/login', async (req, res, next) => {
                 if (err) {
                     return res.json({ sucesso: false, message: "Ocorreu um erro ao tentar logar. Por favor, tente novamente." });
                 }
-                return res.json({ sucesso: true, message: "Redirecionando.", user})
+                return res.json({ sucesso: true, message: "Redirecionando.", dados: {_id: user._id, nome: user.nome, tipo: user.tipo} });
             });
         })(req, res, next);
     } catch (error) {

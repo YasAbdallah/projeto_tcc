@@ -5,6 +5,7 @@ require('../../models/Cliente')
 const Cliente = mongoose.model('cliente')
 require('../../models/Barbeiro')
 const Barbeiro = mongoose.model('barbeiro')
+const {logado} = require("../../helpers/verificarlogin")
 
 
 router.use((req, res, next) => {
@@ -12,11 +13,11 @@ router.use((req, res, next) => {
     next()
 })
 
-router.get('/', (req, res) => {
+router.get('/', logado, (req, res) => {
     res.render('painel/usuario')
 })
 
-router.get('/agenda', (req, res) => {
+router.get('/agenda', logado, (req, res) => {
     const barbeiros = Barbeiro.find().then((barbeiros) => {
         res.render('painel/usuario/agendar', {barbeiros: barbeiros})
     }).catch((err) => { 
@@ -25,11 +26,11 @@ router.get('/agenda', (req, res) => {
     })
 })
 
-router.get('/historico', (req, res) => {
+router.get('/historico', logado, (req, res) => {
     res.render('painel/usuario/historico')
 })
 
-router.get('/perfil', (req, res) => {
+router.get('/perfil', logado, (req, res) => {
     res.render('painel/usuario/perfil')
 })
 

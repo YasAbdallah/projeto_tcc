@@ -389,6 +389,21 @@ main {
     }
 }
 
+/* Estilização da seção de usuário */
+.usuario {
+    text-align: center;
+    margin-bottom: 20px;
+
+    & h1 {
+        font-size: 3.8rem;
+        color: #333;
+    }
+    
+    & p {
+        font-size: 1.5rem;
+        color: #666;
+    }
+}
 
 #servicos {
     scroll-margin-top: 130px;

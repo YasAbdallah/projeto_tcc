@@ -12,7 +12,7 @@
                 <section class="m-3">
                     <label class="form-label" for="nome"><i class="text-danger">*</i> Nome completo:</label>
                     <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome aqui"
-                        aria-required="true" aria-describedby="name" autocomplete="name" value="{{cliente.nome}}"
+                        aria-required="true" aria-describedby="name" autocomplete="name" value="{{user.nome}}"
                         required>
                     <small id="alertaNome" class="text-muted"></small>
                 </section>
@@ -20,31 +20,31 @@
                     <label class="form-label" for="email"><i class="text-danger">*</i> E-mail:</label>
                     <input type="text" name="email" id="email" class="form-control" placeholder="seu@email.aqui"
                         aria-required="true" aria-describedby="emailFormat" autocomplete="email"
-                        value="{{cliente.email}}" required>
+                        value="{{user.email}}" required>
                     <small id="alertaEmail" class="text-muted">Digite no formato exemplo@email.com</small>
                 </section>
                 <section class="m-3">
                     <label class="form-label" for="telefone"><i class="text-danger">*</i> Telefone:</label>
                     <input type="tel" name="telefone" id="telefone" class="form-control" placeholder="(00) 0 0000-0000"
                         maxlength="15" aria-required="true" aria-describedby="telefoneFormat" autocomplete="phone"
-                        value="{{cliente.telefone}}" required>
+                        value="{{user.telefone}}" required>
                     <small id="alertaTelefone" class="text-muted"></small>
                 </section>
                 <section class="m-3">
                     <label class="form-label" for="endereco"><i class="text-danger">*</i> Endereço:</label>
                     <input type="text" name="endereco" id="endereco" class="form-control" placeholder="Av. sua rua, 123"
-                        aria-required="true" autocomplete="street-address" value="{{cliente.endereco}}" required>
+                        aria-required="true" autocomplete="street-address" value="{{user.endereco}}" required>
                     <small id="alertaEndereco" class="text-muted"></small>
                 </section>
                 <section class="m-3">
                     <label class="form-label" for="dataNascimento"><i class="text-danger">*</i> Data de
                         Nascimento:</label>
                     <input type="date" name="dataNascimento" id="dataNascimento" class="form-control"
-                        aria-required="true" value="{{cliente.dataNascimento}}" required>
+                        aria-required="true" value="{{user.dataNascimento}}" required>
                     <small id="alertaDataNascimento" class="text-muted"></small>
                 </section>
                 <section class="m-3">
-                    <label class="form-label" for="genero"><i class="text-danger">*</i> Gênero:</label>
+                    <label class="form-label" for="genero">Gênero:</label>
                     <select name="genero" id="genero" class="form-control" aria-required="true" required>
                         <option value="" disabled selected>Selecione seu gênero</option>
                         <option value="masculino">Masculino</option>
@@ -64,6 +64,5 @@
         </form>
     </section>
 </section>
-
 
 <script type="module" src="/js/perfil/validacao.js"></script>

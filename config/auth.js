@@ -31,6 +31,7 @@ module.exports = function (passport) {
             // Comparação de senha para Cliente
             bcrypt.compare(senha, usuario.senha, (err, iguais) => {
                 if (iguais) {
+                    
                     return done(null, usuario);
                 } else {
                     return done(null, false, { message: "Usuário ou senha incorretos." });
@@ -41,31 +42,24 @@ module.exports = function (passport) {
     }));
 
     passport.serializeUser((user, done) => {
-        done(null, { id: user._id, tipo: user.tipoUsuario }); // Armazena o ID do usuário e o tipo de usuário na sessão
+        done(null, { id: user._id, tipo: user.tipo }); // Armazena o ID do usuário e o tipo de usuário na sessão
     });
 
     passport.deserializeUser((user, done) => {
-        if (user.tipo === 'cliente') {
+        if (user.tipo === 1) {
             // Busca no modelo Cliente
             Cliente.findById(user.id).then((usuario) => {
                 if (usuario) {
-                    done(null, {
-                        id: usuario.id,
-                        nome: usuario.nome,
-                        secao: usuario.secao,
-                    });
+                    done(null, usuario);
                 } else {
                     done(null, false);
                 }
             }).catch((err) => done(err));
-        } else if (user.tipo === 'barbeiro') {
+        } else if (user.tipo === 0) {
             // Busca no modelo Barbeiro
             Barbeiro.findById(user.id).then((barbeiro) => {
                 if (barbeiro) {
-                    done(null, {
-                        id: barbeiro.id,
-                        nome: barbeiro.nome,
-                    });
+                    done(null, barbeiro);
                 } else {
                     done(null, false);
                 }

@@ -23,14 +23,13 @@ const handleForm = async () => {
                     const result = await response.json()
                     if(result.sucesso){
                         await popup(popupSucesso, result)
-                        result.user.tipo == 1 ? window.location.href = "/painel/usuario" : window.location.href = "/painel/funcionario"
+                        result.dados.tipo == 1 ? window.location.href = "/painel/usuario" : window.location.href = "/painel/funcionario"
                     }else{
                         popup(popupErro, result)
                     }
                 }
             }catch(error){
-                console.log(error)
-                popup(popupErro, {sucesso: false, message: "Ocorreu um erro inesperado. "})
+                popup(popupErro, {sucesso: false, message: "Ocorreu um erro inesperado."})
             }    
         })
     }
