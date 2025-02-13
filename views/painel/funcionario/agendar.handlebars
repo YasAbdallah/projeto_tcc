@@ -1,0 +1,66 @@
+<section class="container d-flex flex-column">
+    <section class="agendar">
+        <h1>Agendar serviço</h1>
+        <form action="/agendar" method="POST">
+            <div class="form-group">
+                <label for="cliente">Nome do cliente:</label>
+                <section class="input-container">
+                    <input type="text" id="cliente" name="cliente" required>
+                </section>
+            </div>
+            <div class="form-group">
+                <label for="servico">Escolha o tipo de serviço:</label>
+                <section class="input-container">
+                    <select id="servico" name="servico" required>
+                        {{each servicos}}
+                        <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                </section>
+            </div>
+            <div class="form-group">
+                <label for="data">Escolha o dia: </label>
+                <section class="input-container">
+                    <input type="date" id="data" name="data" required>
+                </section>
+                <small id="alertaData"></small>
+            </div>
+            <div class="form-group">
+                <label for="horario">Escolha o horário:</label>
+                <section class="input-container">
+                    <input type="time" id="horario" name="horario" required>
+                </section>
+            </div>
+            <button type="submit">Agendar</button>
+        </form>
+    </section>
+    <section class="container">
+        <section class="agendamentos">
+            <h2>Seus Agendamentos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Horário</th>
+                        <th>Cliente</th>
+                        <th>Serviço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each agendamentos}}
+                    <tr>
+                        <td>{{this.data}}</td>
+                        <td>{{this.horario}}</td>
+                        <td>{{this.cliente}}</td>
+                        <td>{{this.servico}}</td>
+                    </tr>
+                    {{else}}
+                    <tr>
+                        <td colspan="4">Nenhum agendamento encontrado.</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </section>
+    </section>
+</section>

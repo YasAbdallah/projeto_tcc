@@ -2,6 +2,38 @@
     <section class="usuario">
         <h1>Bem-vindo, {{user.nome}}!</h1>
         <p>Estamos felizes em tê-lo de volta.</p>
-        <p>Data de hoje: {{dataAtual}}</p>
+        <p>Data de hoje: <span id="dataAtual"></span></p>
+    </section>
+
+    <section class="container">
+        <section class="agendamentos">
+            <h2>Seus Agendamentos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Horário</th>
+                        <th>Cliente</th>
+                        <th>Serviço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each agendamentos}}
+                    <tr>
+                        <td>{{this.data}}</td>
+                        <td>{{this.horario}}</td>
+                        <td>{{this.cliente}}</td>
+                        <td>{{this.servico}}</td>
+                    </tr>
+                    {{else}}
+                    <tr>
+                        <td colspan="4">Nenhum agendamento encontrado.</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </section>
     </section>
 </section>
+
+<script type="module" src="/js/painel/funcionario/validacao.js"></script>

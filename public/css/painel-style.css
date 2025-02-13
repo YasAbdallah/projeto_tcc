@@ -58,7 +58,7 @@ main {
     justify-content: space-around;
     background-color: var(--cor2);
     padding: 0.5rem;
-    margin-left: 200px;
+    width: 100%;
 
     a {
         margin: 0 1rem;
@@ -72,60 +72,20 @@ main {
         transition: color 0.3s;
     }
 
-    .btn-login {
+    .btn-sair {
         text-decoration: none;
         border: 3px solid var(--cor1);
+        justify-content: center;
         padding: 10px 15px;
     }
 
-    .btn-login:hover {
+    .btn-sair:hover {
         border: none;
         background-color: var(--cor3);
         color: var(--cor1);
         padding: 13px 18px;
         transition: color 0.5s;
     }
-}
-
-.vertical-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 200px;
-    /* Largura da navbar */
-    height: 100%;
-    position: fixed;
-    /* Fixa a posição */
-    top: 0;
-    /* Fixa no topo */
-    left: 0;
-    /* Fixa na lateral esquerda */
-    overflow-y: auto;
-    /* Adiciona rolagem caso o conteúdo seja maior que a altura */
-    background-color: var(--cor2);
-    /* Cor de fundo */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    /* Adiciona uma sombra para dar profundidade */
-    z-index: 9999;
-    /* Garante que fique sobre outros conteúdos */
-
-    .nav-item {
-        width: 100%;
-    }
-
-    a {
-        justify-self: center;
-        margin: 15px;
-        color: var(--cor1);
-    }
-
-    a:hover {
-        color: var(--cor3);
-        text-decoration: underline;
-        transition: color 0.3s;
-    }
-
 }
 
 .nav .flex-column {
