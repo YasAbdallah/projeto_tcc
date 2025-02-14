@@ -12,7 +12,7 @@
                 <label for="servico">Escolha o tipo de serviço:</label>
                 <section class="input-container">
                     <select id="servico" name="servico" required>
-                        {{each servicos}}
+                        {{#each servicos}}
                         <option value="{{this}}">{{this}}</option>
                         {{/each}}
                     </select>

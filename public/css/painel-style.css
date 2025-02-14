@@ -129,6 +129,7 @@ main {
 
     & input[type="date"],
     input[type="time"],
+    input[type="text"],
     select {
         width: 100%;
         padding: 10px;
