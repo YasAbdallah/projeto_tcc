@@ -12,7 +12,7 @@ const Agendamento = new Schema({
     },
     barbeiro: {
         type: Schema.Types.ObjectId,
-        ref: "barber",
+        ref: "barbeiro",
         required: true
     },
     servico: {
@@ -23,11 +23,7 @@ const Agendamento = new Schema({
         type: Date,
         required: true
     },
-    horaInicio: {
-        type: String,
-        required: true
-    },
-    horaFim: {
+    horaAgendamento: {
         type: String,
         required: true
     },

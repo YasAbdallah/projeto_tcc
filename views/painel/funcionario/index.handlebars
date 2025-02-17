@@ -18,10 +18,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each agendamentos}}
+                    {{#each agenda}}
                     <tr>
-                        <td>{{this.data}}</td>
-                        <td>{{this.horario}}</td>
+                        <td>{{this.dataAgendamento}}</td>
+                        <td>{{this.horaAgendamento}}</td>
                         <td>{{this.cliente}}</td>
                         <td>{{this.servico}}</td>
                     </tr>
@@ -29,7 +29,9 @@
                     <tr>
                         <td colspan="4">Nenhum agendamento encontrado.</td>
                     </tr>
+                    
                     {{/each}}
+                    
                 </tbody>
             </table>
         </section>

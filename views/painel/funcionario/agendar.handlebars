@@ -12,7 +12,7 @@
                 <label for="servico">Escolha o tipo de serviço:</label>
                 <section class="input-container">
                     <select id="servico" name="servico" required>
-                        {{#each servicos}}
+                        {{#each user.servicos}}
                         <option value="{{this}}">{{this}}</option>
                         {{/each}}
                     </select>
@@ -28,8 +28,9 @@
             <div class="form-group">
                 <label for="horario">Escolha o horário:</label>
                 <section class="input-container">
-                    <input type="time" id="horario" name="horario" required>
+                    <input type="time" id="horario" name="horario" min="{{barbeiro.horariosDisponiveis.[0].start}}" max="{{barbeiro.horariosDisponiveis.[1].end}}" required>
                 </section>
+                
             </div>
             <button type="submit">Agendar</button>
         </form>
@@ -47,10 +48,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each agendamentos}}
+                    {{#each agenda}}
                     <tr>
-                        <td>{{this.data}}</td>
-                        <td>{{this.horario}}</td>
+                        <td>{{this.dataAgendamento}}</td>
+                        <td>{{this.horaAgendamento}}</td>
                         <td>{{this.cliente}}</td>
                         <td>{{this.servico}}</td>
                     </tr>
