@@ -23,6 +23,10 @@ const Barbeiro = new Schema({
         type: String,
         required: false
     },
+    dataNascimento: {
+        type: Date,
+        required: true
+    },
     senha: {
         type: String,
         required: true

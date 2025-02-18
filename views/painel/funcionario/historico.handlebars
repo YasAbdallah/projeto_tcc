@@ -1,0 +1,29 @@
+<section class="container d-flex flex-column">
+    <section class="historico">
+        <h1>Histórico de Agendamentos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Horário</th>
+                    <th>Cliente</th>
+                    <th>Serviço</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each agenda}}
+                <tr>
+                    <td>{{this.dataAgendamento}}</td>
+                    <td>{{this.horaAgendamento}}</td>
+                    <td>{{this.cliente}}</td>
+                    <td>{{this.servico}}</td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="4">Nenhum agendamento encontrado.</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>
+</section>

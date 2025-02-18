@@ -5,6 +5,7 @@ require('../../models/Barbeiro')
 const Barbeiro = mongoose.model('barbeiro')
 require('../../models/Agendamento')
 const Agendamento = mongoose.model('agendamento')
+const {admin} = require("../../helpers/verificarlogin")
 
 
 router.use((req, res, next) => {
@@ -12,17 +13,12 @@ router.use((req, res, next) => {
     next()
 })
 
-router.get('/', (req, res) => {
+router.get('/', admin, (req, res) => {
     Promise.all([
         Barbeiro.findOne({_id: res.locals.user._id}).select('-senha'),
         Agendamento.find({barbeiro: res.locals.user._id, status: "Agendado"})
     ])
     .then(([barbeiro, agenda]) => {
-        console.log(res.locals.user._id, agenda)
-        if(barbeiro == null) {
-            req.flash('error_msg', 'Você deve estar logado para acessar o painel')
-            res.redirect('/login')
-        }
         res.render('painel/funcionario/index', {barbeiro: barbeiro, agenda: agenda})
     })
     .catch((err) => {
@@ -30,7 +26,7 @@ router.get('/', (req, res) => {
     })
 })
 
-router.get('/agenda', (req, res) => {
+router.get('/agenda', admin, (req, res) => {
     Promise.all([
         Barbeiro.findOne({_id: res.locals.user._id}).select('-senha'),
         Agendamento.find({barbeiro: res.locals.user._id, status: "Agendado"})
@@ -44,11 +40,11 @@ router.get('/agenda', (req, res) => {
     })
 })
 
-router.get('/historico', (req, res) => {
+router.get('/historico', admin, (req, res) => {
     res.render('painel/funcionario/historico')
 })
 
-router.get('/perfil', (req, res) => {
+router.get('/perfil', admin, (req, res) => {
     res.render('painel/funcionario/perfil')
 })
 
