@@ -110,6 +110,11 @@ main {
     font-size: 1.2em;
 }
 
+#outroGenero{
+    display: none;
+    margin-top: 10px;
+}
+
 
 .agendar {
     align-items: start;
