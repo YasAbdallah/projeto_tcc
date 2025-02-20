@@ -6,9 +6,17 @@ const Barbeiro = new Schema({
         type: String,
         required: true
     },
-    contato: {
+    sobrenome: {
         type: String,
         required: true
+    },
+    cpf: {
+        type: String,
+        required: true
+    },
+    genero: {
+        type: String,
+        required: false
     },
     email: {
         type: String,
@@ -17,11 +25,20 @@ const Barbeiro = new Schema({
     },
     telefone: {
         type: String,
-        required: false
+        required: true
     },
     endereco: {
-        type: String,
-        required: false
+        type: [
+            {
+                cep: Number,
+                estado: String,
+                cidade: String,
+                bairro: String,
+                rua: String,
+                numero: Number
+            }
+        ],
+        required: true
     },
     dataNascimento: {
         type: Date,
