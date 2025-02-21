@@ -60,26 +60,26 @@ main {
     padding: 0.5rem;
     width: 100%;
 
-    a {
+    & a {
         margin: 0 1rem;
         color: var(--cor1);
         font-weight: 500;
     }
 
-    a:hover {
+    & a:hover {
         color: var(--cor3);
         text-decoration: underline;
         transition: color 0.3s;
     }
 
-    .btn-sair {
+    & .btn-sair {
         text-decoration: none;
         border: 3px solid var(--cor1);
         justify-content: center;
         padding: 10px 15px;
     }
 
-    .btn-sair:hover {
+    & .btn-sair:hover {
         border: none;
         background-color: var(--cor3);
         color: var(--cor1);
@@ -113,6 +113,32 @@ main {
 #outroGenero{
     display: none;
     margin-top: 10px;
+}
+
+.servicos{
+    display: flex;
+    width: 300px;
+    flex: 0 0 150px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    display: flex;
+    
+    max-width: max-content;
+    margin: 5px;
+    background-color: var(--cor4);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    align-items: center;
+
+    & .remove-tag {
+        display: flex;
+        margin-left: 10px;
+        cursor: pointer;
+        align-items: flex-end;
+    }
 }
 
 fieldset{

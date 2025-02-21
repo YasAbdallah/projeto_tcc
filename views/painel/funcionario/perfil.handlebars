@@ -117,7 +117,8 @@
                     <div class="col">
                         <label class="form-label" for="bairro"><i class="text-danger">*</i> Bairro:</label>
                         <input type="text" name="bairro" id="bairro" class="form-control" placeholder="São Jorge"
-                            aria-required="true" autocomplete="address-level3" value="{{user.endereco.[0].bairro}}" required>
+                            aria-required="true" autocomplete="address-level3" value="{{user.endereco.[0].bairro}}"
+                            required>
                         <small id="alertaBairro" class="text-muted"></small>
                     </div>
                 </section>
@@ -125,7 +126,8 @@
                     <div class="col">
                         <label class="form-label" for="rua"><i class="text-danger">*</i> Rua:</label>
                         <input type="text" name="rua" id="rua" class="form-control" placeholder="Av. sua rua"
-                            aria-required="true" autocomplete="street-address" value="{{user.endereco.[0].rua}}" required>
+                            aria-required="true" autocomplete="street-address" value="{{user.endereco.[0].rua}}"
+                            required>
                         <small id="alertaRua" class="text-muted"></small>
                     </div>
                     <div class="col">
@@ -137,6 +139,25 @@
                     </div>
                 </section>
             </fieldset>
+            <fieldset>
+                <legend>Serviços:</legend>
+                <div class="row m-3">
+                    <div class="col tag-container">
+                        <label class="form-label" for="servico">Adicione seus serviços: </label>
+                        <input type="text" name="servico" id="servico" class="form-control" placeholder="Corte de cabelo">
+                    </div>
+                </div>
+                <div class="servicos m-3" name="servicos">
+                    
+                    {{#each user.servicos}}
+                    <span class="tag" value="{{this}}">{{this}}
+                        <span class="remove-tag">x</span>
+                    </span>
+                    {{else}}
+                    {{/each}}
+                </div>
+
+            </fieldset>
             <section class="d-grid gap-2">
                 <button class="btn btn-lg btn-primary m-3" id="buttonDadosConta" aria-label="Confirmar log-in">Atualiza
                     dados</button>
@@ -147,5 +168,37 @@
 
 <script type="module" src="/js/perfil/validacao.js"></script>
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tagContainer = document.querySelector('.tag-container');
+        const input = document.getElementById('servico');
+        const servicos = document.getElementsByName("servicos")[0];
 
+        input.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const tagText = input.value.trim();
+                if (tagText) {
+                    servicos.appendChild(addTag(tagText));
+                    input.value = "";
+                }
+            }
+        });
+        function addTag(text) {
+            
+            const tag = document.createElement('span');
+            tag.classList.add('tag');
+            tag.setAttribute("value", text)
+            tag.textContent = text;
+
+            const removeBtn = document.createElement('span');
+            removeBtn.classList.add('remove-tag');
+            removeBtn.textContent = 'x';
+            removeBtn.addEventListener('click', function () {
+                tagContainer.removeChild(tag);
+            });
+
+            tag.appendChild(removeBtn);
+            return tagContainer.appendChild(tag, input);
+        }
+    });
 </script>
