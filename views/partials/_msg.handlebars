@@ -1,101 +1,39 @@
-<div class="position-absoute">
-  <!-- Toast de Sucesso -->
-  <div class="toast show position-absolute top-0 start-50 translate-middle-x fs-3" id="popupSucesso" role="alert"
-    aria-live="polite" hidden>
-    <div class="toast-header">
-      <span class="me-auto">&#x1F389 &#x1F389 &#x1F389</span>
-      <button type="button" class="btn-close ms-4" data-bs-dismiss="toast" aria-label="Fechar"></button>
-    </div>
-    <div class="toast-body fs-4 bg-white" data-mensagem="true"></div>
-    <div class="barra-progresso"></div>
+<!-- Toast de Sucesso -->
+<div class="toast show custom-toast custom-toast fs-3" id="popupSucesso" role="alert" aria-live="polite" hidden>
+  <div class="toast-header">
+    <span class="me-auto">&#x1F389 &#x1F389 &#x1F389</span>
+    <button type="button" class="btn-close ms-4" data-bs-dismiss="toast" aria-label="Fechar"></button>
   </div>
-
-  <!-- Toast de Erro -->
-  <div class="toast show position-absolute top-0 start-50 translate-middle-x fs-3" id="popupErro" role="alert"
-    aria-live="assertive" hidden>
-    <div class="toast-header">
-      <span class="me-auto">&#x1F635 &#x1F635 &#x1F635</span>
-      <button type="button" class="btn-close ms-4" data-bs-dismiss="toast" aria-label="Fechar"></button>
-    </div>
-    <div class="toast-body fs-4 bg-white" data-mensagem="false"></div>
-    <div class="barra-progresso"></div>
-  </div>
-
-  <!-- Toast de Bloqueio -->
-  <div class="toast show position-absolute top-0 start-50 translate-middle-x fs-3" id="popupBloqueio" role="alert"
-    aria-live="assertive" hidden>
-    <div class="toast-header">
-      <span class="me-auto">&#x1F6D1 &#x1F6D1 &#x1F6D1</span>
-      <button type="button" class="btn-close ms-4" data-bs-dismiss="toast" aria-label="Fechar"></button>
-    </div>
-    <div class="toast-body fs-4 bg-white" data-mensagem="false"></div>
-    <div class="barra-progresso"></div>
-  </div>
-
-  <!-- Toast de Logout -->
-  <div class="toast show position-absolute top-0 start-50 translate-middle-x fs-3" id="popLogout" role="alert"
-    aria-live="polite" hidden>
-    <div class="toast-header">
-      <span class="me-auto">&#x1F44B &#x1F44B &#x1F44B</span>
-      <button type="button" class="btn-close ms-4" data-bs-dismiss="toast" aria-label="Fechar"></button>
-    </div>
-    <div class="toast-body fs-4 bg-white" data-mensagem="false"></div>
-    <div class="barra-progresso"></div>
-  </div>
+  <div class="toast-body fs-4 bg-white" data-mensagem="true"></div>
+  <div class="barra-progresso"></div>
 </div>
 
-{{#if success_msg}}
-<div class="toast show position-absolute top-0 start-50 translate-middle-x m-4 fs-3">
+<!-- Toast de Erro -->
+<div class="toast show custom-toast fs-3" id="popupErro" role="alert" aria-live="assertive" hidden>
   <div class="toast-header">
-    &#x1F389 &#x1F389 &#x1F389 &#x1F389 &#x1F389
-    <button type="button" class="btn-close ms-4" data-bs-dismiss="toast"></button>
+    <span class="me-auto">&#x1F635 &#x1F635 &#x1F635</span>
+    <button type="button" class="btn-close ms-4" data-bs-dismiss="toast" aria-label="Fechar"></button>
   </div>
-  <div class="toast-body fs-4 bg-white">
-    {{success_msg}}
-  </div>
+  <div class="toast-body fs-4 bg-white" data-mensagem="false"></div>
+  <div class="barra-progresso"></div>
 </div>
-{{/if}}
-{{#if error_msg}}
-<div class="toast show position-absolute top-0 start-50 translate-middle-x m-4 fs-3">
+
+<!-- Toast de Bloqueio -->
+<div class="toast show custom-toast fs-3" id="popupBloqueio" role="alert" aria-live="assertive" hidden>
   <div class="toast-header">
-    &#x1F635 &#x1F635 &#x1F635 &#x1F635 &#x1F635
-    <button type="button" class="btn-close ms-4" data-bs-dismiss="toast"></button>
+    <span class="me-auto">&#x1F6D1 &#x1F6D1 &#x1F6D1</span>
+    <button type="button" class="btn-close ms-4" data-bs-dismiss="toast" aria-label="Fechar"></button>
   </div>
-  <div class="toast-body fs-4 bg-white">
-    {{error_msg}}
-  </div>
+  <div class="toast-body fs-4 bg-white" data-mensagem="false"></div>
+  <div class="barra-progresso"></div>
 </div>
-{{/if}}
-{{#if access_msg}}
-<div class="toast show position-absolute top-0 start-50 translate-middle-x m-4 fs-3">
+
+<!-- Toast de Logout -->
+<div class="toast show custom-toast fs-3" id="popLogout" role="alert" aria-live="polite" hidden>
   <div class="toast-header">
-    &#x1F6D1 &#x1F6D1 &#x1F6D1 &#x1F6D1 &#x1F6D1
-    <button type="button" class="btn-close ms-4" data-bs-dismiss="toast"></button>
+    <span class="me-auto">&#x1F44B &#x1F44B &#x1F44B</span>
+    <button type="button" class="btn-close ms-4" data-bs-dismiss="toast" aria-label="Fechar"></button>
   </div>
-  <div class="toast-body fs-4 bg-white">
-    {{access_msg}}
-  </div>
+  <div class="toast-body fs-4 bg-white" data-mensagem="false"></div>
+  <div class="barra-progresso"></div>
 </div>
-{{/if}}
-{{#if logout_msg}}
-<div class="toast show position-absolute top-0 start-50 translate-middle-x m-4 fs-3">
-  <div class="toast-header">
-    &#x1F44B &#x1F44B &#x1F44B &#x1F44B &#x1F44B
-    <button type="button" class="btn-close ms-4" data-bs-dismiss="toast"></button>
-  </div>
-  <div class="toast-body fs-4 bg-white">
-    Você saiu! {{logout_msg}}
-  </div>
-</div>
-{{/if}}
-{{#if login_msg}}
-<div class="toast show position-absolute top-0 start-50 translate-middle-x m-4 fs-3">
-  <div class="toast-header">
-    &#x1F389 &#x1F389 &#x1F389 &#x1F389
-    <button type="button" class="btn-close ms-4" data-bs-dismiss="toast"></button>
-  </div>
-  <div class="toast-body fs-4 bg-white">
-    {{login_msg}}
-  </div>
-</div>
-{{/if}}

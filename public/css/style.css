@@ -118,26 +118,26 @@ main {
     /* Centraliza o texto */
     overflow: hidden;
     /* Evita overflow */
-}
 
-.imagem-topo h1 {
-    font-weight: 500;
-    color: var(--cor1);
-    margin-bottom: 1rem;
-}
-
-.imagem-topo h2 {
-    font-weight: 500;
-    color: var(--cor5);
-    margin-bottom: 1rem;
-}
-
-.imagem-topo a {
-    color: white;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background-color: var(--cor3);
-    border-radius: 5px;
+    & h1 {
+        font-weight: 500;
+        color: var(--cor1);
+        margin-bottom: 1rem;
+    }
+    
+    & .imagem-topo h2 {
+        font-weight: 500;
+        color: var(--cor5);
+        margin-bottom: 1rem;
+    }
+    
+    & a {
+        color: white;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        background-color: var(--cor3);
+        border-radius: 5px;
+    }
 }
 
 #servicos {
@@ -176,6 +176,16 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-self: center;
+    position: absolute;
+    top: 10%;
+    z-index: 1000;
 }
 
 #contato {
@@ -269,36 +279,26 @@ iframe {
 }
 
 .custom-toast {
+    display: flex;
+    flex-direction: column; 
     position: absolute;
-    /* Fixa o elemento na viewport */
-    top: 10px;
-    /* Ajusta a distância do topo */
-    left: 50%;
-    /* Centraliza horizontalmente */
-    transform: translateX(-50%);
-    /* Corrige o deslocamento para centralização */
-    z-index: 9999 !important;
-    /* Garante que fique acima de outros elementos (maior que modais do Bootstrap) */
-    max-width: 90%;
-    /* Define um limite de largura para telas pequenas */
-    width: auto;
-    /* Ajusta o tamanho automaticamente ao conteúdo */
-    pointer-events: auto;
-    /* Permite interação com o elemento */
-}
+    top: 5%;
+    right: 5%;
+    
+    & .toast-header {
+        background-color: var(--cor1);
+        /* Fundo claro para o cabeçalho */
+        color: var(--cor3-1);
+        /* Cor do texto de erro */
+        border-bottom: 1px solid var(--cor2);
+        /* Linha divisória */
+    }
+    
+    & .toast-body {
+        background-color: var(--cor1);
+        /* Fundo branco */
+    }
 
-.custom-toast .toast-header {
-    background-color: #f8d7da;
-    /* Fundo claro para o cabeçalho */
-    color: #721c24;
-    /* Cor do texto de erro */
-    border-bottom: 1px solid #f5c6cb;
-    /* Linha divisória */
-}
-
-.custom-toast .toast-body {
-    background-color: #fff;
-    /* Fundo branco */
 }
 
 
