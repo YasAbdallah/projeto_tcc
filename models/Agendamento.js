@@ -32,10 +32,6 @@ const Agendamento = new Schema({
         enum: ["Agendado", "Concluído", "Cancelado", "Em Andamento"],
         default: "Agendado"
     },
-    notas: {
-        type: String,
-        default: ""
-    },
     dataCriacaoRegistro: {
         type: Date,
         default: Date.now

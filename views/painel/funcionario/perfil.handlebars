@@ -167,38 +167,3 @@
 </section>
 
 <script type="module" src="/js/perfil/validacao.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const tagContainer = document.querySelector('.tag-container');
-        const input = document.getElementById('servico');
-        const servicos = document.getElementsByName("servicos")[0];
-
-        input.addEventListener('keypress', function (event) {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                const tagText = input.value.trim();
-                if (tagText) {
-                    servicos.appendChild(addTag(tagText));
-                    input.value = "";
-                }
-            }
-        });
-        function addTag(text) {
-            
-            const tag = document.createElement('span');
-            tag.classList.add('tag');
-            tag.setAttribute("value", text)
-            tag.textContent = text;
-
-            const removeBtn = document.createElement('span');
-            removeBtn.classList.add('remove-tag');
-            removeBtn.textContent = 'x';
-            removeBtn.addEventListener('click', function () {
-                tagContainer.removeChild(tag);
-            });
-
-            tag.appendChild(removeBtn);
-            return tagContainer.appendChild(tag, input);
-        }
-    });
-</script>

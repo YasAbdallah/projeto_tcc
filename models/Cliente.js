@@ -6,6 +6,18 @@ const Cliente = new Schema({
         type: String,
         required: true
     },
+    sobrenome: {
+        type: String,
+        required: true
+    },
+    cpf: {
+        type: String,
+        required: true
+    },
+    genero: {
+        type: String,
+        required: false
+    },
     email: {
         type: String,
         required: true,
@@ -13,35 +25,37 @@ const Cliente = new Schema({
     },
     telefone: {
         type: String,
-        required: false
+        required: true
     },
     endereco: {
-        type: String,
-        required: false
+        type: [
+            {
+                cep: Number,
+                estado: String,
+                cidade: String,
+                bairro: String,
+                rua: String,
+                numero: Number
+            }
+        ],
+        required: true
+    },
+    dataNascimento: {
+        type: Date,
+        required: true
     },
     senha: {
         type: String,
         required: true
     },
-    dataNacimento: {
-        type: Date,
-        required: false
-    },
-    genero:{
-        type: String,
-        required: false
-    },
-    dataCriacao: {
-        type: Date,
-        default: Date.now
-    },
+
     tipo: {
         type: Number,
-        default: 1 // Cliente
+        default: 1 // Barbeiro
     },
-    ativo: {
-        type: Boolean,
-        default: true
+    dataCriacaoRegistro: {
+        type: Date,
+        default: Date.now
     }
 });
 
