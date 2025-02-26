@@ -30,14 +30,12 @@ const preencherGenero = () => {
 }
 
 const formataDataNascimento = () => {
-    const campoData = document.getElementById("dataNascimento")
-    const dataNaoFormatada = campoData.getAttribute("data-value")
-    console.log(dataNaoFormatada)
-    const data = new Date(dataNaoFormatada)// Formatando a data para o formato yyyy-MM-dd
-    console.log(data)
+    const campoData = document.getElementById("dataNascimento");
+    const dataNaoFormatada = campoData.getAttribute("data-value");
+    const data = new Date(dataNaoFormatada);// Formatando a data para o formato yyyy-MM-dd
     const ano = data.getFullYear();
     const mes = String(data.getMonth() + 1).padStart(2, '0'); // Meses são baseados em zero
-    const dia = String(data.getDate()).padStart(2, '0');
+    const dia = String(data.getDate()+1).padStart(2, '0'); // Dias são baseados em zero
     return campoData.value = `${ano}-${mes}-${dia}`;
 }
 
