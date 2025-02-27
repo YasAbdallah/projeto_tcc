@@ -51,7 +51,7 @@ const Cliente = new Schema({
 
     tipo: {
         type: Number,
-        default: 1 // Barbeiro
+        default: 1 // Cliente
     },
     dataCriacaoRegistro: {
         type: Date,

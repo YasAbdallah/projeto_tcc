@@ -18,7 +18,9 @@ export const handleForm = async (idFormulario, router, redirecionarPag) => {
                     const result = await response.json()
                     if(result.sucesso){
                         await popup(popupSucesso, result)
-                        window.location.href = redirecionarPag
+                        if(redirecionarPag){
+                            window.location.href = redirecionarPag
+                        }
                     }else{
                         popup(popupErro, result)
                     }

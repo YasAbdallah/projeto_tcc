@@ -6,12 +6,17 @@ const Cliente = mongoose.model('cliente')
 require('../../models/Barbeiro')
 const Barbeiro = mongoose.model('barbeiro')
 const {logado} = require("../../helpers/verificarlogin")
+const Perfil = require('./usuario/perfil')
+
 
 
 router.use((req, res, next) => {
     res.locals.layout = 'painel'
     next()
 })
+
+router.use('/perfil', logado, Perfil)
+
 
 router.get('/', logado, (req, res) => {
     res.render('painel/usuario')
@@ -29,11 +34,6 @@ router.get('/agenda', logado, (req, res) => {
 router.get('/historico', logado, (req, res) => {
     res.render('painel/usuario/historico')
 })
-
-router.get('/perfil', logado, (req, res) => {
-    res.render('painel/usuario/perfil')
-})
-
 
 
 module.exports = router
