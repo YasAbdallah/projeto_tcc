@@ -6,6 +6,7 @@ const Barbeiro = mongoose.model('barbeiro')
 require('../../models/Agendamento')
 const Agendamento = mongoose.model('agendamento')
 const {admin} = require("../../helpers/verificarlogin")
+const Perfil = require('./funcionario/perfil')
 
 
 router.use((req, res, next) => {
@@ -44,8 +45,6 @@ router.get('/historico', admin, (req, res) => {
     res.render('painel/funcionario/historico')
 })
 
-router.get('/perfil', admin, (req, res) => {
-    res.render('painel/funcionario/perfil')
-})
+router.use('/perfil', admin, Perfil)
 
 module.exports = router

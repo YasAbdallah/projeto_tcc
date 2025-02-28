@@ -33,7 +33,8 @@
                         <label class="form-label" for="dataNascimento"><i class="text-danger">*</i> Data de
                             Nascimento:</label>
                         <input type="date" name="dataNascimento" id="dataNascimento" class="form-control"
-                            aria-required="true" autocomplete="bday" value="{{user.dataNascimento}}" required>
+                            aria-required="true" autocomplete="bday" data-value="{{user.dataNascimento}}" value=""
+                            required>
                         <small id="alertaDataNascimento" class="text-muted"></small>
                     </div>
                     <div class="col">
@@ -140,15 +141,63 @@
                 </section>
             </fieldset>
             <fieldset>
+                <legend>Dias e horarios:</legend>
+                <div class="row m-3">
+                    <div class="col tag-container">
+                        <label class="form-label" for="diasDisponiveis">Dias de disponibilidade: </label>
+                        <input type="datetime" name="diasDisponiveis" id="diasDisponiveis" class="form-control"
+                            placeholder="segunda" list="diasSemana">
+                        <datalist id="diasSemana">
+                            <option value="Domingo">Domingo</option>
+                            <option value="Segunda">Segunda</option>
+                            <option value="Terça">Terça</option>
+                            <option value="Quarta">Quarta</option>
+                            <option value="Quinta">Quinta</option>
+                            <option value="Sexta">Sexta</option>
+                            <option value="Sábado">Sábado</option>
+                        </datalist>
+                        <small id="alertaDiasDisponiveis" class="text-muted">Preencha com o nome dos dias da
+                            semana.</small>
+                    </div>
+                </div>
+                <div class="servicos m-3" name="dias">
+                    {{#each user.diasDisponiveis}}
+                    <span class="tag" name="dias" value="{{this}}">{{this}}
+                        <span class="remove-tag">x</span>
+                    </span>
+                    {{else}}
+                    {{/each}}
+                </div>
+                <hr>
+                <div class="row m-3">
+                    <div class="col">
+                        <label class="form-label">Horarios antes do almoço: </label>
+                        <input type="time" name="entradaAntesAlmoco" id="entradaAntesAlmoco" class="form-control"
+                            value="{{user.horariosDisponiveis.[0].start}}">
+                        <input type="time" name="saidaAntesAlmoco" id="saidaAntesAlmoco" class="form-control"
+                            value="{{user.horariosDisponiveis.[0].end}}">
+                        <small id="alertaHorariosDisponiveis" class="text-muted"></small>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Horarios depois do almoço: </label>
+                        <input type="time" name="entradaDepoisAlmoco" id="entradaDepoisAlmoco" class="form-control"
+                            value="{{user.horariosDisponiveis.[1].start}}">
+                        <input type="time" name="saidaDepoisAlmoco" id="saidaDepoisAlmoco" class="form-control"
+                            value="{{user.horariosDisponiveis.[1].end}}">
+                        <small id="alertaHorariosDisponiveis" class="text-muted"></small>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
                 <legend>Serviços:</legend>
                 <div class="row m-3">
                     <div class="col tag-container">
                         <label class="form-label" for="servico">Adicione seus serviços: </label>
-                        <input type="text" name="servico" id="servico" class="form-control" placeholder="Corte de cabelo">
+                        <input type="text" name="servico" id="servico" class="form-control"
+                            placeholder="Corte de cabelo">
                     </div>
                 </div>
                 <div class="servicos m-3" name="servicos">
-                    
                     {{#each user.servicos}}
                     <span class="tag" value="{{this}}">{{this}}
                         <span class="remove-tag">x</span>
@@ -167,3 +216,4 @@
 </section>
 
 <script type="module" src="/js/perfil/validacao.js"></script>
+<script type="module" src="/js/painel/funcionario/validacao.js"></script>
