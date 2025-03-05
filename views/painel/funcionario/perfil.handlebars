@@ -162,9 +162,11 @@
                 </div>
                 <div class="servicos m-3" name="dias">
                     {{#each user.diasDisponiveis}}
-                    <span class="tag" name="dias" value="{{this}}">{{this}}
+                    <div class="tag">
+                        <input type="text" name="dia-{{@index}}" id="dia-{{@index}}" value="{{this}}" hidden>
+                        {{this}}
                         <span class="remove-tag">x</span>
-                    </span>
+                    </div>
                     {{else}}
                     {{/each}}
                 </div>
@@ -193,15 +195,17 @@
                 <div class="row m-3">
                     <div class="col tag-container">
                         <label class="form-label" for="servico">Adicione seus serviços: </label>
-                        <input type="text" name="servico" id="servico" class="form-control"
+                        <input type="text" class="form-control"
                             placeholder="Corte de cabelo">
                     </div>
                 </div>
                 <div class="servicos m-3" name="servicos">
                     {{#each user.servicos}}
-                    <span class="tag" value="{{this}}">{{this}}
+                    <div class="tag">
+                        <input type="text" name="servico-{{@index}}" id="servico-{{@index}}" value="{{this}}" hidden>
+                        {{this}}
                         <span class="remove-tag">x</span>
-                    </span>
+                    </div>
                     {{else}}
                     {{/each}}
                 </div>
@@ -217,3 +221,4 @@
 
 <script type="module" src="/js/perfil/validacao.js"></script>
 <script type="module" src="/js/painel/funcionario/validacao.js"></script>
+<script type="module" src="/js/painel/funcionario/enviarForm.js"></script>

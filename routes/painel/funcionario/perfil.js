@@ -9,7 +9,9 @@ router.get('/', admin, (req, res) => {
     res.render('painel/funcionario/perfil')
 })
 
-router.post("/alterarDados", admin, (req, res) => { })
+router.post("/alterarDados", admin, (req, res) => {
+    console.log(req.body)
+ })
 
 
 module.exports = router

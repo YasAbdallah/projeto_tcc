@@ -133,6 +133,15 @@ main {
     border-radius: 3px;
     align-items: center;
 
+    & input {
+        border: none;
+        background: transparent;
+        color: inherit;
+        outline: none;
+        padding: 0;
+        margin: 0;
+    }
+
     & .remove-tag {
         display: flex;
         margin-left: 10px;
