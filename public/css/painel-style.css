@@ -542,7 +542,7 @@ iframe {
 }
 
 .toast {
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 10px;
     z-index: 9999;
@@ -552,7 +552,7 @@ iframe {
 }
 
 .custom-toast {
-    position: absolute;
+    position: fixed;
     /* Fixa o elemento na viewport */
     top: 10px;
     /* Ajusta a distância do topo */
@@ -571,6 +571,33 @@ iframe {
 
     & .toast-header {
         background-color: #f8d7da;
+        /* Fundo claro para o cabeçalho */
+        color: #721c24;
+        /* Cor do texto de erro */
+        border-bottom: 1px solid #f5c6cb;
+        /* Linha divisória */
+    }
+
+    & .toast-header-success {
+        background-color: greenyellow;
+        /* Fundo claro para o cabeçalho */
+        color: #721c24;
+        /* Cor do texto de erro */
+        border-bottom: 1px solid #f5c6cb;
+        /* Linha divisória */
+    }
+
+    & .toast-header-alert {
+        background-color: var(--cor3);
+        /* Fundo claro para o cabeçalho */
+        color: #721c24;
+        /* Cor do texto de erro */
+        border-bottom: 1px solid #f5c6cb;
+        /* Linha divisória */
+    }
+
+    & .toast-header-error {
+        background-color: rgb(248, 101, 101);
         /* Fundo claro para o cabeçalho */
         color: #721c24;
         /* Cor do texto de erro */

@@ -278,27 +278,74 @@ iframe {
     justify-content: center;
 }
 
+.toast {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+    max-width: 90%;
+    width: auto;
+    pointer-events: auto;
+}
+
 .custom-toast {
-    display: flex;
-    flex-direction: column; 
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    
+    position: fixed;
+    /* Fixa o elemento na viewport */
+    top: 10px;
+    /* Ajusta a distância do topo */
+    left: 50%;
+    /* Centraliza horizontalmente */
+    transform: translateX(-50%);
+    /* Corrige o deslocamento para centralização */
+    z-index: 9999 !important;
+    /* Garante que fique acima de outros elementos (maior que modais do Bootstrap) */
+    max-width: 90%;
+    /* Define um limite de largura para telas pequenas */
+    width: auto;
+    /* Ajusta o tamanho automaticamente ao conteúdo */
+    pointer-events: auto;
+    /* Permite interação com o elemento */
+
     & .toast-header {
-        background-color: var(--cor1);
+        background-color: #f8d7da;
         /* Fundo claro para o cabeçalho */
-        color: var(--cor3-1);
+        color: #721c24;
         /* Cor do texto de erro */
-        border-bottom: 1px solid var(--cor2);
+        border-bottom: 1px solid #f5c6cb;
         /* Linha divisória */
     }
-    
-    & .toast-body {
-        background-color: var(--cor1);
-        /* Fundo branco */
+
+    & .toast-header-success {
+        background-color: greenyellow;
+        /* Fundo claro para o cabeçalho */
+        color: #721c24;
+        /* Cor do texto de erro */
+        border-bottom: 1px solid #f5c6cb;
+        /* Linha divisória */
     }
 
+    & .toast-header-alert {
+        background-color: var(--cor3);
+        /* Fundo claro para o cabeçalho */
+        color: #721c24;
+        /* Cor do texto de erro */
+        border-bottom: 1px solid #f5c6cb;
+        /* Linha divisória */
+    }
+
+    & .toast-header-error {
+        background-color: rgb(248, 101, 101);
+        /* Fundo claro para o cabeçalho */
+        color: #721c24;
+        /* Cor do texto de erro */
+        border-bottom: 1px solid #f5c6cb;
+        /* Linha divisória */
+    }
+
+
+    & .toast-body {
+        background-color: #fff;
+    }
 }
 
 
