@@ -53,7 +53,7 @@ const Barbeiro = new Schema({
         required: true
     },
     diasDisponiveis: {
-        type: [Number],
+        type: [String],
         required: true
     },
     horariosDisponiveis: {
