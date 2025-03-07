@@ -143,7 +143,7 @@
             <fieldset>
                 <legend>Dias e horarios:</legend>
                 <div class="row m-3">
-                    <div class="col tag-container">
+                    <div class="col tag-container-dias">
                         <label class="form-label" for="diasDisponiveis">Dias de disponibilidade: </label>
                         <input type="datetime" name="diasDisponiveis" id="diasDisponiveis" class="form-control"
                             placeholder="segunda" list="diasSemana">
@@ -160,7 +160,7 @@
                             semana.</small>
                     </div>
                 </div>
-                <div class="servicos m-3" name="dias">
+                <div class="servicos m-3" name="tag-dia">
                     {{#each user.diasDisponiveis}}
                     <div class="tag">
                         <input type="text" name="dia-{{@index}}" id="dia-{{@index}}" value="{{this}}" hidden>
@@ -193,23 +193,21 @@
             <fieldset>
                 <legend>Serviços:</legend>
                 <div class="row m-3">
-                    <div class="col tag-container">
+                    <div class="col tag-container-servicos">
                         <label class="form-label" for="servico">Adicione seus serviços: </label>
-                        <input type="text" class="form-control"
-                            placeholder="Corte de cabelo">
+                        <input type="text" class="form-control" id="servico" placeholder="Corte de cabelo">
                     </div>
                 </div>
                 <div class="servicos m-3" name="servicos">
                     {{#each user.servicos}}
-                    <div class="tag">
-                        <input type="text" name="servico-{{@index}}" id="servico-{{@index}}" value="{{this}}" hidden>
-                        {{this}}
+                    <div class="tag" name="tag-servico">
+                        <input type="hidden" name="servico-{{@index}}" id="servico-{{@index}}" value="{{this}}" hidden>
+                        <span>{{this}}</span>
                         <span class="remove-tag">x</span>
                     </div>
                     {{else}}
                     {{/each}}
                 </div>
-
             </fieldset>
             <section class="d-grid gap-2">
                 <button class="btn btn-lg btn-primary m-3" id="buttonDadosConta" aria-label="Confirmar log-in">Atualiza
@@ -219,6 +217,4 @@
     </section>
 </section>
 
-<script type="module" src="/js/perfil/validacao.js"></script>
-<script type="module" src="/js/painel/funcionario/validacao.js"></script>
 <script type="module" src="/js/painel/funcionario/enviarForm.js"></script>

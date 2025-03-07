@@ -1,19 +1,4 @@
-import { validarEmail, validarTelefone } from "../funcoes.js"
-const email = document.getElementById('email')
-const telefone = document.getElementById('telefone')
-window.onload = async () => {
-    await preencherGenero()
-    await formataDataNascimento()
-    email.addEventListener("focusout", () => {
-        validarEmail(email.value) ? email.style.border = "1px solid green" : email.style.border = "1px solid red"
-    })
-    telefone.addEventListener("keyup", () => {
-        telefone.value = validarTelefone(telefone.value)
-    })
-}
-
-
-const preencherGenero = async () => {
+export const preencherGenero = async () => {
     document.getElementById('genero').addEventListener('change', function() {
         let outroGenero = document.getElementById('outroGenero')
         if (this.value === 'outro') {
@@ -28,7 +13,7 @@ const preencherGenero = async () => {
     })
 }
 
-const formataDataNascimento = async () => {
+export const formataDataNascimento = async () => {
     const campoData = document.getElementById("dataNascimento");
     const dataNaoFormatada = campoData.getAttribute("data-value");
     const data = new Date(dataNaoFormatada);// Formatando a data para o formato yyyy-MM-dd
