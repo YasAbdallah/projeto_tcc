@@ -88,10 +88,10 @@
                 <legend>Endereço: </legend>
                 <section class="row m-3">
                     <div class="col">
-                        <label class="form-label" for="endereco"><i class="text-danger">*</i> Cep:</label>
-                        <input type="text" name="endereco" id="endereco" class="form-control" placeholder="12345-324"
+                        <label class="form-label" for="cep"><i class="text-danger">*</i> Cep:</label>
+                        <input type="text" name="cep" id="cep" class="form-control" placeholder="12345-324"
                             aria-required="true" autocomplete="postal-code" value="{{user.endereco.[0].cep}}" required>
-                        <small id="alertaEndereco" class="text-muted"></small>
+                        <small id="alertaCep" class="text-muted"></small>
                     </div>
 
                     <div class="col">
@@ -195,7 +195,7 @@
                 <div class="row m-3">
                     <div class="col tag-container-servicos">
                         <label class="form-label" for="servico">Adicione seus serviços: </label>
-                        <input type="text" class="form-control" id="servico" placeholder="Corte de cabelo">
+                        <input type="text" class="form-control" name="servico" id="servico" placeholder="Corte de cabelo">
                     </div>
                 </div>
                 <div class="servicos m-3" name="servicos">

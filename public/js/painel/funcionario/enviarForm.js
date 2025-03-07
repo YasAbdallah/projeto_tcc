@@ -58,7 +58,7 @@ window.onload = async () => {
         tag.classList.add('tag');
         const inputTag = document.createElement('input');
         inputTag.setAttribute("type", "hidden");
-        inputTag.setAttribute("name", `servicos-${quantidadeDivTag}`);
+        inputTag.setAttribute("name", `servico-${quantidadeDivTag}`);
         inputTag.setAttribute("value", text);
 
         const span = document.createElement('span');
