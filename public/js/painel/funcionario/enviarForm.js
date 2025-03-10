@@ -34,7 +34,7 @@ window.onload = async () => {
             event.preventDefault();
             const tagText = inputServico.value.trim();
             if (tagText) {
-                divServicos.appendChild(addTag(".tag-container-servicos", "tag-servico", tagText));
+                divServicos.appendChild(addTag(".tag-container-servicos", "tag-servico", "servico", tagText));
                 inputServico.value = "";
             }
         }
@@ -45,20 +45,20 @@ window.onload = async () => {
             event.preventDefault();
             const tagText = inputDia.value.trim();
             if (tagText) {
-                divDias.appendChild(addTag(".tag-container-dias", "tag-dia", tagText));
+                divDias.appendChild(addTag(".tag-container-dias", "tag-dia", "dia", tagText));
                 inputDia.value = "";
             }
         }
     });
 
-    const addTag = (containerTag, tagName, text) => {
+    const addTag = (containerTag, tagName, inputTagName, text) => {
         const tagContainer = document.querySelector(containerTag);
         const quantidadeDivTag = document.querySelectorAll(`[name="${tagName}"]`).length;
         const tag = document.createElement('div');
         tag.classList.add('tag');
         const inputTag = document.createElement('input');
         inputTag.setAttribute("type", "hidden");
-        inputTag.setAttribute("name", `servico-${quantidadeDivTag}`);
+        inputTag.setAttribute("name", `${inputTagName}-${quantidadeDivTag}`);
         inputTag.setAttribute("value", text);
 
         const span = document.createElement('span');

@@ -160,9 +160,9 @@
                             semana.</small>
                     </div>
                 </div>
-                <div class="servicos m-3" name="tag-dia">
+                <div class="servicos m-3" name="dias">
                     {{#each user.diasDisponiveis}}
-                    <div class="tag">
+                    <div class="tag" name="tag-dia">
                         <input type="text" name="dia-{{@index}}" id="dia-{{@index}}" value="{{this}}" hidden>
                         {{this}}
                         <span class="remove-tag">x</span>

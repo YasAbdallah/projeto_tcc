@@ -167,5 +167,18 @@ module.exports = {
             }
             return { sucesso: true, message: "E-mail enviado com sucesso. Verifique sua caixa de entrada ou span." }
         })
+    },
+
+    inicializarArray: async (obj, key) => {
+        if(!Array.isArray(obj[key])){
+            return obj[key] = []
+        }
+    },
+
+    adicionarValorArray: async (obj, key, value) => {
+        if(!Array.isArray(obj[key])){
+            return obj[key] = [value]
+        }
+        return obj[key].push(value)
     }
 }
