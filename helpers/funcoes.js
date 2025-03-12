@@ -8,7 +8,8 @@ module.exports = {
     },
     formatarDataBd: (data) => {
         const dataFormatada = String(data).split(' ')
-        const meses = {"Jan": 'Janeiro',
+        const meses = {
+            "Jan": 'Janeiro',
             "Feb": 'Fevereiro',
             "Mar": 'Março',
             "Apr": 'Abril',
@@ -19,7 +20,8 @@ module.exports = {
             "Sept": 'Setembro',
             "Oct": 'Outubro',
             "Nov": 'Novembro',
-            "Dec": 'Dezembro'}
+            "Dec": 'Dezembro'
+        }
         return `${dataFormatada[2]} de ${meses[dataFormatada[1]]} de ${dataFormatada[3]} às ${dataFormatada[4]}`
     },
     pegarDia: (data) => {
@@ -39,11 +41,11 @@ module.exports = {
         return `${dataFormatada[2]}-${dataFormatada[1]}-${dataFormatada[0]}`
     },
     validarCampo: (campo, mensagemDeErro) => {
-        if(!campo || typeof campo === "undefined" || campo === null || String(campo).trim().length === 0){return {texto: mensagemDeErro}}
+        if (!campo || typeof campo === "undefined" || campo === null || String(campo).trim().length === 0) { return { texto: mensagemDeErro } }
         return null
     },
     validarCampoSenha: (campo, mensagemDeErro) => {
-        if(!campo || String(campo).trim().length === 0 || String(campo).length < 8){return {texto: mensagemDeErro}}
+        if (!campo || String(campo).trim().length === 0 || String(campo).length < 8) { return { texto: mensagemDeErro } }
         return null
     },
     normalizeText: (text) => {
@@ -75,13 +77,17 @@ module.exports = {
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
+                typw: 'OAuth2',
                 user: process.env.MAIL_USERNAME,
-                pass: process.env.MAIL_PASSWORD
+                pass: process.env.MAIL_PASSWORD,
+                clientId: process.env.MAIL_OAUTH_CLIENT_ID,
+                clientSecret: process.env.MAIL_OAUTH_CLIENT_SECRET,
+                refreshToken: process.env.MAIL_OAUTH_REFRESH_TOKEN
             }
         })
 
         const mailOptions = {
-            from: process.env.MAIL_FROM_ADDRESS,
+            from: process.env.MAIL_USERNAME,
             to: email,
             subject: "Recuperação de senha. Projeto-TCC Barbearia",
             html: `<!DOCTYPE html>
@@ -163,6 +169,7 @@ module.exports = {
 
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
+                console.log(error)
                 return { sucesso: false, message: "Ocorreu um erro ao enviar o e-mail. Tente novamente mais tarde." }
             }
             return { sucesso: true, message: "E-mail enviado com sucesso. Verifique sua caixa de entrada ou span." }
@@ -170,13 +177,13 @@ module.exports = {
     },
 
     inicializarArray: async (obj, key) => {
-        if(!Array.isArray(obj[key])){
+        if (!Array.isArray(obj[key])) {
             return obj[key] = []
         }
     },
 
     adicionarValorArray: async (obj, key, value) => {
-        if(!Array.isArray(obj[key])){
+        if (!Array.isArray(obj[key])) {
             return obj[key] = [value]
         }
         return obj[key].push(value)
