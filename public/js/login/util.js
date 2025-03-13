@@ -11,6 +11,10 @@ function mascaraCPF(input) {
     input.value = cpf;
 }
 
+function removerMascaraCPF(input) {
+    return input.value = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+}
+
 function validarCPF(cpf) {
     cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
 

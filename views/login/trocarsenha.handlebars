@@ -2,7 +2,7 @@
     <div class="col-4 card">
         <div class="card-body">
             <h1 class="card-title text-center fs-1">Troca de Senha</h1>
-            <form id="formTrocarSenha" action="/trocarSenha" onsubmit="return validarSenhas();">
+            <form id="formTrocarSenha" action="/trocarSenha">
                 <div class="m-3">
                     <label class="form-label" for="cpf">Confirme seu CPF:</label>
                     <input type="text"
@@ -17,19 +17,6 @@
                            aria-describedby="cpfHelp"
                            required autofocus>
                     <div id="cpfHelp" class="form-text">Digite seu CPF no formato 000.000.000-00.</div>
-                </div>
-                <div class="m-3">
-                    <label class="form-label" for="senhaAtual">Senha Atual:</label>
-                    <input type="password"
-                           autocomplete="current-password"
-                           name="senhaAtual"
-                           id="senhaAtual"
-                           class="form-control"
-                           placeholder="Digite a senha atual."
-                           aria-required="true"
-                           aria-describedby="senhaAtualHelp"
-                           required>
-                    <div id="senhaAtualHelp" class="form-text">Sua senha atual.</div>
                 </div>
                 <div class="m-3">
                     <label class="form-label" for="novaSenha">Nova Senha:</label>

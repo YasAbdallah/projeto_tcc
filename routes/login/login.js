@@ -7,8 +7,10 @@ require('../../models/Barbeiro')
 const Barbeiro = mongoose.model('barbeiro')
 const passport = require("passport")
 const esquecerSenha = require('./esquecerSenha')
+const trocarSenha = require('./trocarSenha')
 
 router.use("/esquecerSenha", esquecerSenha)
+router.use("/trocarSenha", trocarSenha)
 
 router.get('/', (req, res) => {
     res.render("login/")
