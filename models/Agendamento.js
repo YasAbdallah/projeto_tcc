@@ -3,11 +3,8 @@ const Schema = mongoose.Schema;
 
 const Agendamento = new Schema({
     cliente: {
-        type: String,
-        required: true
-    },
-    contatoCliente: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: "cliente",
         required: true
     },
     barbeiro: {
@@ -16,7 +13,7 @@ const Agendamento = new Schema({
         required: true
     },
     servico: {
-        type: String,
+        type: [String],
         required: true
     },
     dataAgendamento: {

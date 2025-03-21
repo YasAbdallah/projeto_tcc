@@ -44,14 +44,14 @@ router.post('/trocarSenha', async (req, res) => {
             if (usuario) {
                 await Cliente.updateOne({ cpf: cpf }, { senha: hash })
                 return res.json({ sucesso: true, message: "Senha alterada com sucesso!" })
-            }
-    
-            // Se não encontrar na coleção de Clientes, tentar na coleção de Barbeiros
-            usuario = await Barbeiro.findOne({ cpf: cpf })
-            console.log(usuario)
-           if (usuario) {
-                await Barbeiro.updateOne({ cpf: cpf }, { senha: hash })
-                return res.json({ sucesso: true, message: "Senha alterada com sucesso!" })
+            }else{
+                // Se não encontrar na coleção de Clientes, tentar na coleção de Barbeiros
+                usuario = await Barbeiro.findOne({ cpf: cpf })
+                console.log(usuario)
+                if (usuario) {
+                    await Barbeiro.updateOne({ cpf: cpf }, { senha: hash })
+                    return res.json({ sucesso: true, message: "Senha alterada com sucesso!" })
+                }
             }
             // Se não encontrar em nenhuma das coleções
             return res.json({ sucesso: false, message: "Usuário não encontrado." })
