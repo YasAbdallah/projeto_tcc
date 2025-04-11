@@ -36,7 +36,7 @@ router.post("/criarConta", async (req, res) => {
     
     try{
 
-        const salt = await bcrypt.genSalt(10)
+        const salt = await bcrypt.genSalt(10) // Gera um salt criptográfico com fator de custo 10, que será usado para "salgar" a senha antes de criar o hash
         const hash = await bcrypt.hash(senha, salt)
         const novoUsuario = { nome: nome, email: email, telefone: telefone, senha: hash}
         await new Cliente(novoUsuario).save()
