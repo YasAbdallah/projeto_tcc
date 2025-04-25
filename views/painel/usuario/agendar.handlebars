@@ -1,7 +1,7 @@
 <section class="container d-flex flex-column">
     <section class="agendar">
         <h1>Agendar serviço</h1>
-        <form action="/agendar" method="POST">
+        <form id="agendarHorario" name="agendarHorario">
             <div class="form-group">
                 <label for="barbeiro">Escolha o barbeiro:</label>
                 <section class="input-container">
@@ -38,7 +38,7 @@
         </form>
     </section>
     <section class="agendamentos mt-4">
-        <h2>Meus agendamentos</h2>
+        <h2>Meus agendamentos atuais</h2>
         <table>
             <thead>
                 <tr>
@@ -49,11 +49,11 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each agendamentos}}
+                {{#each agendamento}}
                 <tr>
-                    <td>{{this.data}}</td>
-                    <td>{{this.horario}}</td>
-                    <td>{{this.barbeiro}}</td>
+                    <td name="dataAgendamento">{{this.dataAgendamento}}</td>
+                    <td>{{this.horaAgendamento}}</td>
+                    <td>{{this.barbeiro.nome}}</td>
                     <td>{{this.servico}}</td>
                 </tr>
                 {{else}}
@@ -67,3 +67,6 @@
 </section>
 
 <script type="module" src="/js/painel/validarAgenda.js"></script>
+<script type="module" src="/js/painel/usuario/enviarForm.js"></script>
+
+

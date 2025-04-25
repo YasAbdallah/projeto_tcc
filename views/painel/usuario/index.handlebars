@@ -14,14 +14,16 @@
                 <th>Data</th>
                 <th>Hora</th>
                 <th>Serviço</th>
+                <th>Starus</th>
             </tr>
             </thead>
             <tbody>
             {{#each agendamento}}
             <tr>
-                <td>{{this.data}}</td>
-                <td>{{this.horario}}</td>
+                <td name="dataAgendamento">{{this.dataAgendamento}}</td>
+                <td>{{this.horaAgendamento}}</td>
                 <td>{{this.servico}}</td>
+                <td>{{this.status}}</td>
             </tr>
             {{else}}
             <tr>
@@ -32,3 +34,5 @@
         </table>
     </section>
 </section>
+
+<script type="module" src="/js/painel/funcoes.js"></script>

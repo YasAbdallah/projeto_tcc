@@ -1,3 +1,4 @@
+import { formatarData } from "../funcoes.js";
 import { popup } from "../funcoes.js";
 
 const selectionBarbeiro = document.getElementById('barbeiro')
@@ -10,6 +11,12 @@ window.onload = async () => {
     await selectBarbeiro();
     await validarDia();
     await validarHorario();
+    const dataAgendada = document.getElementsByName(`dataAgendamento`)
+
+    dataAgendada.forEach(data => {
+        const dataFormatada = formatarData(data.textContent)
+        data.textContent = dataFormatada
+    })
 }
 
 const selectBarbeiro = async () => {

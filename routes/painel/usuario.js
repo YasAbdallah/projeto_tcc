@@ -5,8 +5,12 @@ require('../../models/Cliente')
 const Cliente = mongoose.model('cliente')
 require('../../models/Barbeiro')
 const Barbeiro = mongoose.model('barbeiro')
+require('../../models/Agendamento')
+const Agendamento = mongoose.model('agendamento')
 const {logado} = require("../../helpers/verificarlogin")
 const Perfil = require('./usuario/perfil')
+const Agenda = require('./usuario/agenda')
+const Historico = require('./usuario/historico')
 
 
 
@@ -17,22 +21,13 @@ router.use((req, res, next) => {
 
 router.use('/perfil', logado, Perfil)
 
+router.use('/agenda', logado, Agenda)
 
-router.get('/', logado, (req, res) => {
-    res.render('painel/usuario')
-})
+router.use('/historico', logado, Historico)
 
-router.get('/agenda', logado, (req, res) => {
-    const barbeiros = Barbeiro.find().then((barbeiros) => {
-        res.render('painel/usuario/agendar', {barbeiros: barbeiros})
-    }).catch((err) => { 
-        req.flash('error_msg', 'Houve um erro ao listar os barbeiros')
-        res.redirect('/painel/usuario')
-    })
-})
-
-router.get('/historico', logado, (req, res) => {
-    res.render('painel/usuario/historico')
+router.get('/', logado, async (req, res) => {
+    const agendamento = await Agendamento.find().where('cliente').equals(req.user._id)
+    res.render('painel/usuario', {agendamento})
 })
 
 

@@ -14,8 +14,8 @@ export function popup(elemento, objeto){
 }
 
 export function formatarData(data){
-    const formatarData = new Date(data)
-    return formatarData.toLocaleString()
+    const formatarData = new Date(data).toLocaleDateString('pt-BR')
+    return formatarData
 }
 
 export function criarTag(tag, atributos={}, texto = ''){

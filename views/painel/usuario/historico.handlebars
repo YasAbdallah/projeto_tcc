@@ -6,15 +6,17 @@
                 <tr>
                     <th>Data</th>
                     <th>Hora</th>
+                    <th>Barbeiro</th>
                     <th>Serviço</th>
                     <th>Status</th>
                 </tr>
             </thead>
             <tbody>
-                {{#each agendamentos}}
+                {{#each agendamento}}
                 <tr>
-                    <td>{{this.data}}</td>
-                    <td>{{this.hora}}</td>
+                    <td name="dataAgendamento">{{this.dataAgendamento}}</td>
+                    <td>{{this.horaAgendamento}}</td>
+                    <td>{{this.barbeiro.nome}}</td>
                     <td>{{this.servico}}</td>
                     <td>{{this.status}}</td>
                 </tr>
@@ -27,3 +29,5 @@
         </table>
     </section>
 </section>
+
+<script type="module" src="/js/painel/funcoes.js"></script>
