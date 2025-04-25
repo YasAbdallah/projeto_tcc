@@ -25,9 +25,7 @@ const selectBarbeiro = async () => {
             selectionServico.appendChild(option);
         });
         const diasDisponiveis = selectedOption.getAttribute('data-dias').split(',');
-        const dias = diasDaSemana(diasDisponiveis);
-        console.log(diasDisponiveis, dias)
-        alertaData.innerText = "O barbeiro trabalha apenas às: \n" + dias.join(', ') + ".";
+        alertaData.innerText = "O barbeiro trabalha apenas às: \n" + diasDisponiveis.join(', ') + ".";
     });
 }
 
@@ -35,9 +33,9 @@ const validarDia = async () => {
     selectionData.addEventListener('change', function () {
         const selectBarbeiro = document.getElementById('barbeiro');
         const selectedOption = selectBarbeiro.options[selectBarbeiro.selectedIndex];
+        const diasDisponiveis = diasDaSemana(selectedOption.getAttribute('data-dias').split(`,`));
         const dataSelecionada = new Date(document.getElementById("data").value);
         const diaSelecionado = dataSelecionada.getDay() + 1;
-        const diasDisponiveis = selectedOption.getAttribute('data-dias');
         if (!diasDisponiveis.includes(diaSelecionado)) {
             popup(popupErro, { sucesso: false, message: 'O barbeiro não trabalha nesse dia. Por favor, escolha outro dia.' });
             this.value = '';
@@ -46,8 +44,8 @@ const validarDia = async () => {
 }
 
 const diasDaSemana = (dias) => {
-    const diasDaSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
-    return dias.map(dia => diasDaSemana[dia]);
+    const diasDaSemana = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"];
+    return dias.map(dia => diasDaSemana.indexOf(dia) + 1);
 }
 
 const validarHorario = async () => {
