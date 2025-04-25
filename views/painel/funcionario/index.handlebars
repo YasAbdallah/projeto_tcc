@@ -7,7 +7,7 @@
 
     <section class="container">
         <section class="agendamentos">
-            <h2>Seus Agendamentos</h2>
+            <h2>Seus Agendamentos em abertos</h2>
             <table>
                 <thead>
                     <tr>
@@ -15,15 +15,17 @@
                         <th>Horário</th>
                         <th>Cliente</th>
                         <th>Serviço</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each agenda}}
+                    {{#each agendamento}}
                     <tr>
-                        <td>{{this.dataAgendamento}}</td>
+                        <td name="dataAgendamento" >{{this.dataAgendamento}}</td>
                         <td>{{this.horaAgendamento}}</td>
-                        <td>{{this.cliente}}</td>
+                        <td>{{this.cliente.nome}}</td>
                         <td>{{this.servico}}</td>
+                        <td>{{this.status}}</td>
                     </tr>
                     {{else}}
                     <tr>

@@ -7,6 +7,8 @@ require('../../models/Agendamento')
 const Agendamento = mongoose.model('agendamento')
 const {admin} = require("../../helpers/verificarlogin")
 const Perfil = require('./funcionario/perfil')
+const Historico = require('./funcionario/historico')
+const Agenda = require('./funcionario/agenda')
 
 
 router.use((req, res, next) => {
@@ -14,36 +16,24 @@ router.use((req, res, next) => {
     next()
 })
 
+router.use('/agenda', admin, Agenda)
+router.use('/historico', admin, Historico)
+
+
 router.get('/', admin, (req, res) => {
     Promise.all([
-        Barbeiro.findOne({_id: res.locals.user._id}).select('-senha'),
-        Agendamento.find({barbeiro: res.locals.user._id, status: "Agendado"})
+        Barbeiro.findOne({_id: req.user._id}).select('-senha'),
+        Agendamento.find({barbeiro: req.user._id, status: "Agendado"}).populate('cliente')
     ])
-    .then(([barbeiro, agenda]) => {
-        res.render('painel/funcionario/index', {barbeiro: barbeiro, agenda: agenda})
+    .then(([barbeiro, agendamento]) => {
+        res.render('painel/funcionario/index', {barbeiro: barbeiro, agendamento: agendamento})
     })
     .catch((err) => {
         res.redirect('/login')
     })
 })
 
-router.get('/agenda', admin, (req, res) => {
-    Promise.all([
-        Barbeiro.findOne({_id: res.locals.user._id}).select('-senha'),
-        Agendamento.find({barbeiro: res.locals.user._id, status: "Agendado"})
-    ])
-    .then(([barbeiro, agenda]) => {
-        res.render('painel/funcionario/agendar', {barbeiro: barbeiro, agenda: agenda})
-    })
-    .catch((err) => { 
-        req.flash('error_msg', 'Houve um erro ao listar o barbeiro ou a agenda')
-        res.redirect('/painel/funcionario/index')
-    })
-})
 
-router.get('/historico', admin, (req, res) => {
-    res.render('painel/funcionario/historico')
-})
 
 router.use('/perfil', admin, Perfil)
 

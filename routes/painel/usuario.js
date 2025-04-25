@@ -26,7 +26,7 @@ router.use('/agenda', logado, Agenda)
 router.use('/historico', logado, Historico)
 
 router.get('/', logado, async (req, res) => {
-    const agendamento = await Agendamento.find().where('cliente').equals(req.user._id)
+    const agendamento = await Agendamento.find().where('cliente').equals(req.user._id).populate('barbeiro')
     res.render('painel/usuario', {agendamento})
 })
 
