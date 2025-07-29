@@ -73,7 +73,7 @@ A funcionalidade de cadastro de usuário permite o registro de novos clientes ao
 
 O código da imagem abaixo, é responsável pela criptografia da senha usando a biblioteca bcrypt.js e para salvar o usuário recém-cadastrado no banco de dados. No código, a constante salt gera uma string aleatória que é adicionada junto a senha antes do hashing para garantir que mesmo que duas senhas sejam iguais os hashes serão diferentes.
 
-![Código de criptografia de senha](image.png)
+![Código de criptografia de senha](../../public/img/codigo.png)
 
 “Figura 1 – Trecho de código de criptografia de senha e salvamento de cadastro no banco de dados”  
 Fonte: autor (2025)
@@ -86,7 +86,7 @@ Para a autenticação, o usuário insere o seu e-mail e senha no formulário de 
 Após essa autenticação bem-sucedida, é efetuado uma serialidade dos dados para iniciar uma sessão usando o ID e o tipo de usuário. E por fim é efetuado a desserialização para recuperar as informações do usuário do banco de dados para gerenciamento das permissões durante o acesso ao sistema após o login bem-sucedido. O diagrama da figura 2 é a representação do que é efetuado pelo sistema durante o processo de autenticação de login do usuário.
 
 
-![diagrama de sequência do módulo de autenticação de usuários”](public/img/image-1.png)
+![diagrama de sequência do módulo de autenticação de usuários”](../../public/img/diagrama-de-sequencia.png)
 
 “Figura 2 – diagrama de sequência do módulo de autenticação de usuários”  
 Fonte: autor (2025)
@@ -97,7 +97,7 @@ Foi desenvolvido um formulário interativo para facilitar a marcação de horár
 Durante o agendamento de serviços, o sistema realiza validações automáticas garantindo que os horários não sejam sobrepostos e que o serviço seja agendado apenas em dias e horários compatíveis com a escala de trabalho do barbeiro.
 
 
-![Tela de agendamento de serviços do sistema](.public/img/image-2.png)
+![Tela de agendamento de serviços do sistema](../../public/img/tela-de-agendamento.png)
 
 “Figura 3 – Tela de agendamento de serviços do sistema”  
 Fonte: autor (2025)
